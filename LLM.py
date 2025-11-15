@@ -19,12 +19,13 @@ Your tasks:
      • Questions should reflect intermediate and advanced misunderstandings ONLY.
      • For each question, provide a clear, editable answer for the instructor.
 3. If difficulty is below 3:
-     • Do not return anything
+     • Return an empty FAQ list.
 4. DO NOT mention difficulty in the FAQ or inside answers.
 
 Return STRICT JSON:
 
 {
+  "difficulty": number,
   "faq": [
     {
       "question": "string",
@@ -36,7 +37,6 @@ Return STRICT JSON:
 TEXT TO ANALYZE:
 {TEXT}
 """
-
 
 # =============================
 # MAIN ENTRYPOINT
