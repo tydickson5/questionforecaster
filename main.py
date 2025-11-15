@@ -1,30 +1,33 @@
 from canvasreader import CanvasReader 
+from embedding import QuizParser
 
+import json
 
 if __name__ == "__main__":
+
+    
     # Configuration
     CANVAS_URL = 'https://canvas.its.virginia.edu'  # e.g., 'https://canvas.harvard.edu'
     API_TOKEN = '22119~LxPGrtw6eU9F8yKyX8QkrM8GUYKChGk4n4w8rAthr2ke6VJCwnV6uL93NhLNNnNt'  # Get this from Canvas Account Settings
     COURSE_ID = 175906  # Replace with your course ID
     
+    # Get assignment ID from command line argument
+
+    assignment_id = 155647
+    
     # Create reader
     reader = CanvasReader(CANVAS_URL, API_TOKEN, COURSE_ID)
+    allClasses = reader.get_all_quizzes()
+    print(json.dumps(allClasses, indent=2))
     
-    # Get all content and save to JSON
-    content = reader.save_to_json('my_course_content.json')
     
-    # Or get specific types
-    # quizzes = reader.get_all_quizzes()
-    # assignments = reader.get_all_assignments()
-    # lectures = reader.get_all_lectures()
+    # Get the assignment
+    assignment_data = reader.get_quiz(assignment_id)
+    embedder = QuizParser(assignment_data)
+    data = embedder.parse()
+    #print(json.dumps(data, indent=2))
     
-    # Print preview
-    print("\n" + "="*60)
-    print("PREVIEW OF FIRST ITEM:")
-    print("="*60)
-    if content['items']:
-        first_item = content['items'][0]
-        print(f"Type: {first_item['type']}")
-        print(f"Title: {first_item['title']}")
-        print(f"\nContent Preview (first 300 chars):")
-        print(first_item['content'][:300] + "...")
+    
+else:
+    print("Usage: python3 canvas_reader.py <assignment_id>")
+    print("Example: python3 canvas_reader.py 67890")

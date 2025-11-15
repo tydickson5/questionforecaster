@@ -154,19 +154,3 @@ class QuizParser:
         return question_text, points_val, choices
 
 
-# Example
-
-if __name__ == "__main__":
-    assignment_data = {
-      "type": "quiz",
-      "id": 155647,
-      "title": "Reading Quiz 1",
-      "content": "Quiz: Reading Quiz 1\n\nPoints: 5.0\nDue: 2024-09-04T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nOne type of Basic network security defense tool is a:\nPoints: 1.0\n\nAnswer Choices:\n  • Firewall [CORRECT]\n  • Black hat\n  • NotPetya\n  • Canadian\n\nQuestion 2:\nWhich of the following is a main type of network discussed in the text?\nPoints: 1.0\n\nAnswer Choices:\n  • Wide Area Networks (WAN) [CORRECT]\n  • Social Networks\n  • Peering Networks\n  • Aruba Networks\n\n"
-    }
-
-    parser = QuizParser(assignment_data)
-    structured = parser.parse()
-
-    print(json.dumps(structured, indent=2))
-
-    parser.save("output_quiz_155647.json")
