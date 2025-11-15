@@ -18,16 +18,21 @@ if __name__ == "__main__":
     # Create reader
     reader = CanvasReader(CANVAS_URL, API_TOKEN, COURSE_ID)
     allClasses = reader.get_all_quizzes()
-    print(json.dumps(allClasses, indent=2))
+    #print(json.dumps(allClasses, indent=2))
     
     
     # Get the assignment
-    assignment_data = reader.get_quiz(assignment_id)
+    assignment_data = reader.get_assignment(790778)
     embedder = QuizParser(assignment_data)
     data = embedder.parse()
-    #print(json.dumps(data, indent=2))
+    print(json.dumps(data, indent=2))
     
     
 else:
     print("Usage: python3 canvas_reader.py <assignment_id>")
     print("Example: python3 canvas_reader.py 67890")
+
+
+
+            #quiz_data = reader.get_quiz()           # list of quizzes
+       #assignment_data = reader.get_assignment(790778)
