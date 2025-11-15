@@ -131,13 +131,4 @@ def safe_parse_json(raw):
 # =============================
 # RUN ANALYSIS (ENTRYPOINT)
 # =============================
-if __name__ == "__main__":
-    test_chunks = [
-        {
-            "chunk_id": 1,
-            "section_title": "Wireless Networks",
-            "text": "Wireless networks transmit data using radio waves and require authentication protocols."
-        }
-    ]
 
-    analyze_all_chunks(test_chunks)

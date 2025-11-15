@@ -2,6 +2,8 @@ from canvasreader import CanvasReader
 from embedding import QuizParser
 from embedding import AssignmentParser
 
+import LLM
+
 import json
 
 if __name__ == "__main__":
@@ -17,16 +19,28 @@ if __name__ == "__main__":
     assignment_id = 155647
     
     # Create reader
-    reader = CanvasReader(CANVAS_URL, API_TOKEN, COURSE_ID)
-    allClasses = reader.get_all_quizzes()
+    #reader = CanvasReader(CANVAS_URL, API_TOKEN, COURSE_ID)
+    #allClasses = reader.get_all_quizzes()
     #print(json.dumps(allClasses, indent=2))
+
+
+    file_path = 'assignment.json' 
+
+    with open(file_path, 'r') as file:
+        # Load the JSON data from the file into a Python variable
+        # The json.load() function directly reads from the file object
+        data_variable = json.load(file)
+
+    #print(json.dumps(data_variable, indent=2))
     
     
     # Get the assignment
-    assignment_data = reader.get_assignment(790778)
-    print(json.dumps(assignment_data, indent=2))
-    embedder = AssignmentParser(assignment_data)
+    #assignment_data = reader.get_assignment(790869)
+    #print(json.dumps(assignment_data, indent=2))
+    embedder = AssignmentParser(data_variable)
     data = embedder.parse()
+    #print(json.dumps(data, indent=2))
+    data = LLM.analyze_all_chunks(data["scenarios"])
     print(json.dumps(data, indent=2))
     
     
