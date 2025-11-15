@@ -14,10 +14,7 @@ You are generating an FAQ document for instructors based on course material.
 
 Your tasks:
 1. Evaluate how challenging the material is for students.
-2. If the material is NOT challenging, return:
-   {
-     "faq": []
-   }
+2. If the material is NOT challenging, give 1 broad question about the material.
 3. If the material IS challenging, identify 3–6 questions students are likely to ask.
 4. These questions should reflect intermediate and advanced misunderstandings only.
 5. Provide clear, editable instructor-facing answers for each question.
