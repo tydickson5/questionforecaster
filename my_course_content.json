@@ -1,0 +1,816 @@
+{
+  "course_name": "Canvas Hackathon (Professor Wright and Professor Lewis)",
+  "course_id": 175906,
+  "items": [
+    {
+      "type": "quiz",
+      "id": 155642,
+      "title": "Reading Quiz 4",
+      "content": "Quiz: Reading Quiz 4\n\nPoints: 5.0\nDue: 2024-10-02T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nWhat is a Botnet?\nPoints: 1.0\n\nAnswer Choices:\n  • A rouge network\n  • A group of Internet-connected computers under the control of a remote hacker [CORRECT]\n  • A setup used to launch a man-in-the-middle attack\n  • A type of malware\n\nQuestion 2:\nA(n) _____ is a software tool that is used to capture packets from a network.\nPoints: 1.0\n\nAnswer Choices:\n  • Sniffer [CORRECT]\n  • Botnet\n  • Cracker\n  • Scanner\n\nQuestion 3:\nWhich of the following terms best describes a person with very little hacking skills?\nPoints: 1.0\n\nAnswer Choices:\n  • Script Kiddie [CORRECT]\n  • NooB\n  • Rook\n  • Wannabe\n\nQuestion 4:\nWhich of the below is NOT an example of a threat?\nPoints: 1.0\n\nAnswer Choices:\n  • Alteration threat\n  • Disclosure Threat\n  • Denial or Distruction Threat\n  • Rootkit Threat [CORRECT]\n\nQuestion 5:\nWhich of the following impacts availability?\nPoints: 1.0\n\nAnswer Choices:\n  • DDos [CORRECT]\n  • Cross-site scripting\n  • SQL Injection\n  • None of the Above\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155645,
+      "title": "Lab 1 Quiz",
+      "content": "Quiz: Lab 1 Quiz\n\nDescription: Quiz to test understanding of Lab 1.\nThis quiz is designed to test your understanding of Lab 1: Data Gathering and Footprinting of a Website.\n\nPoints: 8.0\nDue: 2024-09-16T03:59:59Z\n\nQuestions:\n\nQuestion 1:\nBy its nature, WHOIS information must be:\nPoints: 1.0\n\nAnswer Choices:\n  • encrypted.\n  • concealed.\n  • kept private.\n  • publicly available. [CORRECT]\n\nQuestion 2:\nIn the lab, you used __________ from your local computer to capture data about a targeted company that might be useful in performing a potential attack on that company’s corporate website.\nPoints: 1.0\n\nAnswer Choices:\n  • Google.com [CORRECT]\n  • Yahoo.com\n  • Microsoft.com\n  • the Windows Start icon\n\nQuestion 3:\nSam Spade is considered a(n):\nPoints: 1.0\n\nAnswer Choices:\n  • invasive tool.\n  • non-intrusive tool. [CORRECT]\n  • ineffective tool.\n  • attacking device.\n\nQuestion 4:\nThe Internet has always provided the would-be attacker potential access; now it also provides much-welcomed:\nPoints: 1.0\n\nAnswer Choices:\n  • intelligence. [CORRECT]\n  • attacks.\n  • threats.\n  • communication.\n\nQuestion 5:\nThe first phase of hacking is the __________ phase, which is designed to gain as much information about a target organization and its systems as possible.\nPoints: 1.0\n\nAnswer Choices:\n  • information\n  • identification\n  • reconnaissance [CORRECT]\n  • follow-up\n\nQuestion 6:\nWhich of the following can a hacker derive from the IP address of a target server?\nPoints: 1.0\n\nAnswer Choices:\n  • The physical location of the server’s data center (hosting location) [CORRECT]\n  • The physical location of the server’s owner\n  • The contact information for the domain\n  • The network path that was followed\n\nQuestion 7:\nWhich of the following is used to identify the network path that must be followed to reach one system from another?\nPoints: 1.0\n\nAnswer Choices:\n  • WHOIS\n  • Sam Spade\n  • traceroute [CORRECT]\n  • nslookup\n\nQuestion 8:\nWhich of the following will return information about the domain owner, including contact names, numbers, addresses, and the names of associated servers?\nPoints: 1.0\n\nAnswer Choices:\n  • WHOIS [CORRECT]\n  • Sam Spade\n  • traceroute\n  • nslookup\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155648,
+      "title": "Lab 2 Quiz",
+      "content": "Quiz: Lab 2 Quiz\n\nDescription: Quiz to test understanding of Lab 2: Using Encryption to Enhance Confidentiality and Integrity\n\nPoints: 8.0\nDue: 2024-09-23T03:59:59Z\n\nQuestions:\n\nQuestion 1:\nCryptography takes human readable information and makes it unreadable “cipher text” which can only be read if:\nPoints: 1.0\n\nAnswer Choices:\n  • it is broadcast over a public network.\n  • a digital device is “always on.”\n  • it is asymmetric.\n  • one possesses the correct key. [CORRECT]\n\nQuestion 2:\nEach time a key pair is created, Kleopatra generates:\nPoints: 1.0\n\nAnswer Choices:\n  • a unique 40-character fingerprint. [CORRECT]\n  • a unique 8-digit fingerprint.\n  • a test.\n  • an expiration date.\n\nQuestion 3:\nHow can you verify that the integrity of encrypted files is maintained during the transmission to another user’s computer?\nPoints: 1.0\n\nAnswer Choices:\n  • Import the file into Kleopatra and select the Integrity Check option.\n  • Right-click the file and select Integrity Check from the context menu.\n  • Right-click the file and select Verify from the context menu.\n  • Compare the decrypted file’s contents with the contents of the original file. [CORRECT]\n\nQuestion 4:\nHow do you encrypt a text message using the keys you created in the lab?\nPoints: 1.0\n\nAnswer Choices:\n  • Double-click the file and select Sign and Encrypt from the application menu.\n  • Double-click the file and select Encrypt or Decrypt from the application menu.\n  • Right-click the file and select Sign and Encrypt from the context menu. [CORRECT]\n  • Right-click the file and select Encrypt or Decrypt from the context menu.\n\nQuestion 5:\nIf someone sends you his public key and you import it into Kleopatra, will he be able to decrypt the encrypted messages you send him?\nPoints: 1.0\n\nAnswer Choices:\n  • Yes because his public key is used by both of you to encrypt and decrypt messages.\n  • Only if he also sends you his private key.\n  • No because you must provide your private key to any user wanting to decrypt any message encrypted by you.\n  • No because you must provide your public key to any user wanting to decrypt any message encrypted by you. [CORRECT]\n\nQuestion 6:\nIn Kleopatra, each new certificate is created with no expiration (valid until) date, but you can set an expiration date in the:\nPoints: 1.0\n\nAnswer Choices:\n  • Export Secret Details screen.\n  • Certificate Creation Wizard.\n  • FileZilla Client application.\n  • Certificate Details screen. [CORRECT]\n\nQuestion 7:\nKeys are also referred to as:\nPoints: 1.0\n\nAnswer Choices:\n  • secret messages.\n  • pairs.\n  • certificates. [CORRECT]\n  • senders.\n\nQuestion 8:\nWhich of the following statements is true regarding symmetric cryptography?\nPoints: 1.0\n\nAnswer Choices:\n  • The sender and receiver use the same key to encrypt and decrypt a given message. [CORRECT]\n  • It is quite slow and generally more difficult to implement than asymmetric cryptography.\n  • It does not provide confidentiality or integrity.\n  • It guarantees authenticity.\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155643,
+      "title": "Lab 3 Quiz",
+      "content": "Quiz: Lab 3 Quiz\n\nPoints: 6.0\nDue: 2024-10-07T03:59:59Z\n\nQuestions:\n\nQuestion 1:\nWhat type of attack can be used to search for weak login credentials?\nPoints: 1.0\n\nAnswer Choices:\n  • port scanning\n  • brute forcing passwords [CORRECT]\n  • SQL injections\n  • social engineering\n\nQuestion 2:\nWhich of the following commands could be used to perform an initial scan of a target host that would have low risk of detection by an EDRS?\nPoints: 1.0\n\nAnswer Choices:\n  • nmap -A IP_ADDRESS -p 80,22\n  • hydra -l root -P /path/to/word_list IP_ADDRESS ssh\n  • nmap IP_ADDRESS [CORRECT]\n  • curl -XGET http://IP_ADDRESS/SQL_INJECTION_TEST\n\nQuestion 3:\nWhich of the following is not an endpoint device?\nPoints: 1.0\n\nAnswer Choices:\n  • A software-dependent weapon system\n  • A SCADA device in a natural gas distribution network\n  • A handheld analog radio [CORRECT]\n  • A network-connected drone\n\nQuestion 4:\nWhich of the following scenarios is more likely to indicate a system has been compromised?\nPoints: 1.0\n\nAnswer Choices:\n  • a single isolated failed SSH login\n  • multiple failed SSH logins from the same IP address\n  • multiple failed SSH logins followed by a success, all from the same IP address [CORRECT]\n  • a single isolated successful SSH login\n\nQuestion 5:\nWhich of these tools would be useful for taking over a target workstation and gaining system privileges?\nPoints: 1.0\n\nAnswer Choices:\n  • nmap\n  • metasploit [CORRECT]\n  • curl\n  • hydra\n\nQuestion 6:\nWhat is the best description of endpoint systems?\nPoints: 1.0\n\nAnswer Choices:\n  • Endpoint systems provide data paths between devices in a network.\n  • Endpoint systems are devices that connect to a network. [CORRECT]\n  • Endpoint systems make routing decisions within a network.\n  • Endpoint systems filter traffic at network boundaries.\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155646,
+      "title": "Lab 4 Quiz",
+      "content": "Quiz: Lab 4 Quiz\n\nDescription: Complete the quiz after completing Lab 4.\n\nPoints: 5.0\nDue: 2024-10-30T03:59:00Z\n\nQuestions:\n\nQuestion 1:\nWhich of the following statements is true regarding SQL Injection attacks?\nPoints: 1.0\n\nAnswer Choices:\n  • They are extremely difficult to prevent.\n  • Their likelihood can be reduced through regular testing. [CORRECT]\n  • Their likelihood cannot be reduced through secure software development practices.\n  • They are one of the rarest types of web attack\n\nQuestion 2:\nHackers use __________ to execute arbitrary scripts through the web browser.\nPoints: 1.0\n\nAnswer Choices:\n  • phishing attacks\n  • penetration testing\n  • SQL Injection\n  • cross-site scripting (XSS) [CORRECT]\n\nQuestion 3:\nWhich of the following Web forms can be exploited to output passwords, credit card information, and other data?\nPoints: 1.0\n\nAnswer Choices:\n  • Those with integrity\n  • Those with confidentiality\n  • Those that are poorly designed [CORRECT]\n  • Those that are properly secured\n\nQuestion 4:\nHow can you ensure the confidentiality, integrity, and availability (CIA) of the web application and service?\nPoints: 1.0\n\nAnswer Choices:\n  • Symmetric testing\n  • Asymmetric testing\n  • Penetration testing [CORRECT]\n  • Vulnerability testing\n\nQuestion 5:\nIn the lab, what did you do before attempting the script tests that exposed the vulnerabilities?\nPoints: 1.0\n\nAnswer Choices:\n  • Set the security level of penetration testing to high.\n  • Set the security level of penetration testing to low.\n  • Set the security level of Damn Vulnerable Web Application (DVWA) to high.\n  • Set the security level of DVWA to low. [CORRECT]\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155644,
+      "title": "Lab 5 Quiz",
+      "content": "Quiz: Lab 5 Quiz\n\nDescription: Complete the quiz after completing Lab 5.\n\nPoints: 6.0\nDue: 2024-10-28T03:59:59Z\n\nQuestions:\n\nQuestion 1:\nHow can an attacker assess the effectiveness of a DoS attack?\nPoints: 1.0\n\nAnswer Choices:\n  • monitor the traffic on the target's network interface\n  • monitor the traffic on the target network's gateway device\n  • attempt legitimate activity on the target during a trial attack [CORRECT]\n  • monitor network traffic on the attacking device\n\nQuestion 2:\nWhat is the best description of most of the machines involved in a typical botnet?\nPoints: 1.0\n\nAnswer Choices:\n  • machines owned by the attacker and distributed globally\n  • machines owned by the attacker and housed in a single data center\n  • machines not owned by the attacker, but compromised to allow the attacker to run arbitrary programs [CORRECT]\n  • machines not owned by the attacker, but hired by them to run arbitrary programs\n\nQuestion 3:\nWhich of the following is not usually a primary role of the command-and-control server for a botnet?\nPoints: 1.0\n\nAnswer Choices:\n  • to conduct attacks directly against the target [CORRECT]\n  • to provide payloads to machines in the botnet\n  • to establish a channel of communication with the machines in the botnet\n  • to receive reports of results from the botnet\n\nQuestion 4:\nWhy does using a botnet allow an attack to overwhelm a target more easily than attacking from a single machine?\nPoints: 1.0\n\nAnswer Choices:\n  • It is easier to coordinate an attack involving many machines.\n  • The total capacity for bandwidth and connections of the botnet can be much higher than the capacity of the target. [CORRECT]\n  • The botnet can use machines that are globally distributed.\n  • The botnet can include machines with multiple operating systems.\n\nQuestion 5:\nWhich of the following tools is most helpful for identifying potential attack vectors on a target?\nPoints: 1.0\n\nAnswer Choices:\n  • ping\n  • hping3\n  • nmap [CORRECT]\n  • ssh\n\nQuestion 6:\nWhich of the following methods would you employ to issue commands to a botnet from a C2 (command-and-control) server?\nPoints: 1.0\n\nAnswer Choices:\n  • make a dropper script available for download\n  • deploy an exploit to compromise new machines\n  • listen for messages on a private IRC channel\n  • send messages to a private IRC channel [CORRECT]\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155640,
+      "title": "Lab 6 Quiz",
+      "content": "Quiz: Lab 6 Quiz\n\nPoints: 7.0\nDue: 2024-11-11T04:59:59Z\n\nQuestions:\n\nQuestion 1:\nA promising victim at a target company has been identified. The victim has received some training on basic computer security. Which of the following techniques would be the best approach in a spear fishing attack to deploy a ransomware dropper script?\nPoints: 1.0\n\nAnswer Choices:\n  • a threatening message telling the victim to click a link\n  • a message that appears to come from a manager asking the victim to view a new policy in a PDF [CORRECT]\n  • a message with a link about a seemingly harmless subject that is not work-related\n  • a message that appears to come from security personnel with an attached executable\n\nQuestion 2:\nAn attacker has sent out a mass email to attempt ransomware attacks on a target company. The ransomware generates a symmetric key to encrypt the victim's data. It generates an asymmetric key pair and uses the public key to encrypt the symmetric key. The malware server receives the information needed to restore the victim's data and stores it in a log file. What does the attacker need to send to a victim if they choose to honor the ransom demand?\nPoints: 1.0\n\nAnswer Choices:\n  • the asymmetric private key [CORRECT]\n  • the asymmetric public key\n  • the symmetric key\n  • both the symmetric key and the asymmetric private key\n\nQuestion 3:\nWhat is the major difference between a ransomware attack and other types of cybersecurity threats?\nPoints: 1.0\n\nAnswer Choices:\n  • A ransomware attack is performed in a way that is impossible to detect.\n  • A ransomware attack is combined with a promise to reverse the damage when a payment is received. [CORRECT]\n  • A ransomware attack involves the attacker physically abducting a member of the target organization.\n  • A ransomware attack always requires user interaction.\n\nQuestion 4:\nWhat is the most likely primary purpose of a ransomware attack being conducted against an enemy during a conflict?\nPoints: 1.0\n\nAnswer Choices:\n  • Locating key facilities of the enemy's infrastructure.\n  • Disrupting the infrastructure of the enemy. [CORRECT]\n  • Extracting data about the enemy's actions.\n  • Getting money from the enemy.\n\nQuestion 5:\nWhich of the following actions is a reasonable mitigation for most companies that can be effective at preventing ransomware attacks from succeeding?\nPoints: 1.0\n\nAnswer Choices:\n  • Developing a detailed response plan for ransomware attacks\n  • Disabling all internet access from employees' computers and devices\n  • Training all personnel to spot risky emails and links [CORRECT]\n  • Hiring a security analyst to monitor all network traffic manually\n\nQuestion 6:\nHow can the compromise of a single machine in a target network using a ransomware attack result in the disruption of many parts of the victim's systems?\nPoints: 1.0\n\nAnswer Choices:\n  • Once the ransom is paid, it enables the attack to spread rapidly to other machines.\n  • The success of a single attack can require the victim to disable or restrict the use of many more machines until a thorough damage assessment can be completed. [CORRECT]\n  • Attempting to mitigate a ransomware attack results in the immediate spread to new machines.\n  • A ransomware attack is more visible, so it creates more panic.\n\nQuestion 7:\nWhich of the following targets would be the most promising to a threat actor planning a new ransomware attack through spear phishing?\nPoints: 1.0\n\nAnswer Choices:\n  • the email address of a seasoned system administrator with detailed social media data\n  • a list of all the email addresses at the target company\n  • the email address of a newly hired security analyst with detailed social media data [CORRECT]\n  • the email address of a C-level executive\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155647,
+      "title": "Reading Quiz 1",
+      "content": "Quiz: Reading Quiz 1\n\nPoints: 5.0\nDue: 2024-09-04T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nOne type of Basic network security defense tool is a:\nPoints: 1.0\n\nAnswer Choices:\n  • Firewall [CORRECT]\n  • Black hat\n  • NotPetya\n  • Canadian\n\nQuestion 2:\nWhich of the following is a main type of network discussed in the text?\nPoints: 1.0\n\nAnswer Choices:\n  • Wide Area Networks (WAN) [CORRECT]\n  • Social Networks\n  • Peering Networks\n  • Aruba Networks\n\nQuestion 3:\nWhat common protocol used to transmit most network traffic on earth was a section of the assigned chapter?\nPoints: 1.0\n\nAnswer Choices:\n  • TCP/IP [CORRECT]\n  • Appletalk\n  • Valve\n  • DMARK\n\nQuestion 4:\nThe assigned chapter included a section on wireless networks, used to transmit data using radio waves.\nPoints: 1.0\n\nAnswer Choices:\n  • True [CORRECT]\n  • False\n\nQuestion 5:\nThe OSI in OSI model stands for Optional Sidecar Insertion.\nPoints: 1.0\n\nAnswer Choices:\n  • True\n  • False [CORRECT]\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155649,
+      "title": "Reading Quiz 2",
+      "content": "Quiz: Reading Quiz 2\n\nDescription: Reading Quiz 2 - Chapter 3 Defensive Technologies\n\nPoints: 5.0\nDue: 2024-09-11T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nThe difference between IDS and IPS is:\nPoints: 1.0\n\nAnswer Choices:\n  • Intrusion Detection vs Intrusion Prevention [CORRECT]\n  • Elementary\n  • One is a firewall ,the other is a smokescreen\n  • Intrusion Deterrance vs Intrusion Protection\n\nQuestion 2:\nI common network security device is a:\nPoints: 1.0\n\nAnswer Choices:\n  • Firewall [CORRECT]\n  • Garden Hose\n  • Network stopper\n  • Eraser\n\nQuestion 3:\nA honeypot is a:\nPoints: 1.0\n\nAnswer Choices:\n  • is a computer that is configured to attract attackers to it. [CORRECT]\n  • is another word for a firewall\n  • is the most secure computer on a network\n  • never works to detect attackers\n\nQuestion 4:\nA defense strategy that is multilayered, which requires that multiple controls be compromised to exploit any vulnerability is know as:\nPoints: 1.0\n\nAnswer Choices:\n  • Defense in Depth [CORRECT]\n  • Walling\n  • Margerine\n  • Rings of fire\n\nQuestion 5:\nA firewall is a very common network security device.\nPoints: 1.0\n\nAnswer Choices:\n  • True [CORRECT]\n  • False\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155650,
+      "title": "Reading Quiz 3",
+      "content": "Quiz: Reading Quiz 3\n\nPoints: 5.0\nDue: 2024-09-18T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nThree of the main types of cyptosystems discussed in the chapter are:\nPoints: 1.0\n\nAnswer Choices:\n  • Symmetric Key Encryption [CORRECT]\n  • Asymmetric Key Encryption [CORRECT]\n  • Padlock Encyyption\n  • Hashing [CORRECT]\n  • Guttering-Schnell Encryption\n\nQuestion 2:\nAnother name for an algorithm is a cipher.\nPoints: 1.0\n\nAnswer Choices:\n  • True [CORRECT]\n  • False\n\nQuestion 3:\nIt would be harder to break 40 bit encryption than 256 bit encryption schemes.\nPoints: 1.0\n\nAnswer Choices:\n  • True\n  • False [CORRECT]\n\nQuestion 4:\nCryptography can provide information security in four ways:\nPoints: 1.0\n\nAnswer Choices:\n  • Confidentiality—Ensures that only authorized subjects can access d [CORRECT]\n  • Authenticity—Ensures that data can be verified as valid and can be truste [CORRECT]\n  • Integrity—Ensures that only authorized subjects can modify da [CORRECT]\n  • Nonrepudiation—Provides positive evidence that a message or action originated with a certain party [CORRECT]\n  • Transparency - Data can be clearly identified by both the sender and the receiver\n  • Reciprocity - Keys can be shared and reshared without concern about their validity\n\nQuestion 5:\nThe chapter included a section on future forms of cryptography, which included the concept of quantum computing cryptography.\nPoints: 1.0\n\nAnswer Choices:\n  • True [CORRECT]\n  • False\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155641,
+      "title": "Reading Quiz 5  - Closed Book",
+      "content": "Quiz: Reading Quiz 5  - Closed Book\n\nPoints: 5.0\nDue: 2024-10-16T17:30:00Z\n\nQuestions:\n\nQuestion 1:\nWhich of the following is NOT an aspect of access control?\nPoints: 1.0\n\nAnswer Choices:\n  • Acceptable Use [CORRECT]\n  • Identification\n  • Authentication\n  • Authorization\n  • Accountability\n\nQuestion 2:\nService-level agreement (SLA)—This type of agreement is a a formal contract can include:\nPoints: 1.0\n\nAnswer Choices:\n  • Pricing information\n  • Responsibility Assignment Chart\n  • Reporting and uptime requirements. [CORRECT]\n\nQuestion 3:\nWhich of the following manages the goals and objectives in organizations.\nPoints: 1.0\n\nAnswer Choices:\n  • Policies [CORRECT]\n  • MOUs\n  • SLAs\n  • Guidelines\n\nQuestion 4:\nSecurity administration is (NOTE - The pages assigned for this quiz were off by 4, so ALL responses to this question will be treated as correct):\nPoints: 1.0\n\nAnswer Choices:\n  • A group charged planning, designing, implementing, and monitoring the security plan.\n  • A library of the policies. [CORRECT]\n  • Procedures used to secure the organization.\n  • Framework from the government.\n\nQuestion 5:\nWhich of the following is NOT a means to ensure compliance?\nPoints: 1.0\n\nAnswer Choices:\n  • Enforcement policy [CORRECT]\n  • Events Logs\n  • Compliance Liaison\n  • Remediation\n\n"
+    },
+    {
+      "type": "quiz",
+      "id": 155651,
+      "title": "Reading Quiz 8",
+      "content": "Quiz: Reading Quiz 8\n\nPoints: 5.0\nDue: 2024-12-02T19:00:00Z\n\nQuestions:\n\nQuestion 1:\nTo stay safer from computer monitoring, it is important to:\nPoints: 1.0\n\nAnswer Choices:\n  • Stay away from free software downloads, as they are often loaded with adware [CORRECT]\n  • Do not open attachents from people you do not know and trust [CORRECT]\n  • Take advantage of free utilities that you find using your search engine\n  • Ignore software patches and updates for programs that you use\n\nQuestion 2:\nWhat Amendment to the United States Constitution is most important to personal privacy?\nPoints: 1.0\n\nAnswer Choices:\n  • 4th [CORRECT]\n  • 1st\n  • 12th\n  • 7th\n\nQuestion 3:\nWhich of the following are not good ideas to protect yourself when using cloud computing accounts?\nPoints: 1.0\n\nAnswer Choices:\n  • Link as many of your social media accounts together to make it easier to make posts across platforms [CORRECT]\n  • Use Multi-Factor Authentication (MFA) whenever possible\n  • Use a different and strong password for every cloud account\n  • Have more than one email address that you can use to separate your socail media accounts from your home email and online purchases\n\nQuestion 4:\nIf there are criminal charges against you, almost all evidence posted on the internet is discoverable and police can obtain the information legally.\nPoints: 1.0\n\nAnswer Choices:\n  • True [CORRECT]\n  • False\n\nQuestion 5:\nThe following technologies can be used to track your smartphone (Choose all that apply):\nPoints: 1.0\n\nAnswer Choices:\n  • Cellular Towers [CORRECT]\n  • GPS [CORRECT]\n  • Wifi [CORRECT]\n  • Blutooth [CORRECT]\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 790778,
+      "title": "PSTW Essay",
+      "content": "Assignment: PSTW Essay\n\nPoints: 100.0\nSubmission Types: online_upload\n\nDescription:\nSample Essay\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781963,
+      "title": "Participation / Contribution to Learning",
+      "content": "Assignment: Participation / Contribution to Learning\n\nPoints: 10.0\nSubmission Types: none\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781945,
+      "title": "Reading Quiz 1",
+      "content": "Assignment: Reading Quiz 1\n\nDue: 2024-09-04T18:00:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781947,
+      "title": "Reading Quiz 2",
+      "content": "Assignment: Reading Quiz 2\n\nDue: 2024-09-11T18:00:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\nDescription:\nReading Quiz 2 - Chapter 3 Defensive Technologies\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781948,
+      "title": "Reading Quiz 3",
+      "content": "Assignment: Reading Quiz 3\n\nDue: 2024-09-18T18:00:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781940,
+      "title": "Reading Quiz 4",
+      "content": "Assignment: Reading Quiz 4\n\nDue: 2024-10-02T18:00:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781939,
+      "title": "Reading Quiz 5  - Closed Book",
+      "content": "Assignment: Reading Quiz 5  - Closed Book\n\nDue: 2024-10-16T17:30:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781965,
+      "title": "Reading Quiz #6",
+      "content": "Assignment: Reading Quiz #6\n\nDue: 2024-10-30T18:00:00Z\nPoints: 5.0\nSubmission Types: external_tool\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781964,
+      "title": "Quiz 7: Table Top Simulations Slide Upload",
+      "content": "Assignment: Quiz 7: Table Top Simulations Slide Upload\n\nDue: 2024-11-06T19:00:00Z\nPoints: 5.0\nSubmission Types: online_upload\n\nDescription:\nPlease upload your one-slide (.pptx) answer to:\n1. Your strategy to contain the attack.\n2. What additional tools and resources would you need?\n3. What did your group learn?\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781949,
+      "title": "Reading Quiz 8",
+      "content": "Assignment: Reading Quiz 8\n\nDue: 2024-12-02T19:00:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781943,
+      "title": "Lab 1 Quiz",
+      "content": "Assignment: Lab 1 Quiz\n\nDue: 2024-09-16T03:59:59Z\nPoints: 8.0\nSubmission Types: online_quiz\n\nDescription:\nQuiz to test understanding of Lab 1.\nThis quiz is designed to test your understanding of Lab 1: Data Gathering and Footprinting of a Website.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781946,
+      "title": "Lab 2 Quiz",
+      "content": "Assignment: Lab 2 Quiz\n\nDue: 2024-09-23T03:59:59Z\nPoints: 8.0\nSubmission Types: online_quiz\n\nDescription:\nQuiz to test understanding of Lab 2: Using Encryption to Enhance Confidentiality and Integrity\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781941,
+      "title": "Lab 3 Quiz",
+      "content": "Assignment: Lab 3 Quiz\n\nDue: 2024-10-07T03:59:59Z\nPoints: 6.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781944,
+      "title": "Lab 4 Quiz",
+      "content": "Assignment: Lab 4 Quiz\n\nDue: 2024-10-30T03:59:00Z\nPoints: 5.0\nSubmission Types: online_quiz\n\nDescription:\nComplete the quiz after completing Lab 4.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781942,
+      "title": "Lab 5 Quiz",
+      "content": "Assignment: Lab 5 Quiz\n\nDue: 2024-10-28T03:59:59Z\nPoints: 6.0\nSubmission Types: online_quiz\n\nDescription:\nComplete the quiz after completing Lab 5.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781938,
+      "title": "Lab 6 Quiz",
+      "content": "Assignment: Lab 6 Quiz\n\nDue: 2024-11-11T04:59:59Z\nPoints: 7.0\nSubmission Types: online_quiz\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781953,
+      "title": "Case Assignment 1 - NotPetya writeup",
+      "content": "Assignment: Case Assignment 1 - NotPetya writeup\n\nDue: 2024-09-02T03:59:59Z\nPoints: 10.0\nSubmission Types: external_tool\n\nDescription:\nThis is a link to a Gradescope assignment.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781954,
+      "title": "Case Assignment 2 - Net Neutrality",
+      "content": "Assignment: Case Assignment 2 - Net Neutrality\n\nDue: 2024-09-09T14:30:00Z\nPoints: 10.0\nSubmission Types: external_tool\n\nDescription:\nThis is a link to a Gradescope assignment.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781950,
+      "title": "Case 3: Social Engineering",
+      "content": "Assignment: Case 3: Social Engineering\n\nDue: 2024-11-04T04:59:00Z\nPoints: 10.0\nSubmission Types: discussion_topic\n\nDescription:\nPlease answer these discussion questions assuming you will be asked about your answers in class. For example, make sure all answers are something you could speak to if asked to elaborate. \nRequirements:\n\nYou must post your answer before seeing the other students' replies.\nAnswer all questions in a single post.\nThe first two answers should be no more than a paragraph [5 to 7 sentences]. The second answer will be double and can include uploaded figures or tables.  \n\nQuestions:\n\nWhat should the information security team’s priorities be in the upcoming months, and what steps should they take to implement these changes? [1 Point]\nDiscuss the concept of organizational resilience in the context of mitigating cybersecurity risks. How can UVA develop a culture that emphasizes cybersecurity awareness and resilience among its stakeholders? [2 Points]\nThe attached data set has data from a recent phishing simulation. Describe briefly what you found in this data set and what actions you would take based on this data. [5 Points] \n\nPoints: [8 points this discussion point; 2 points for class discussion]\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781951,
+      "title": "Case 4: Phoenix Project",
+      "content": "Assignment: Case 4: Phoenix Project\n\nDue: 2024-11-11T04:59:00Z\nPoints: 10.0\nSubmission Types: discussion_topic\n\nDescription:\nPlease answer these discussion questions assuming you will be asked about your answers in class. For example, make sure all answers are something you could speak to if asked to elaborate. \nRequirements:\n\nYou must post your answer before seeing the other students' replies.\nAnswer all questions in a single post.\nEach answer should be no more than a paragraph [5 to 7 sentences]. \n\nQuestions:\n\nWhat are some other alternative(s) other than going \"dark\"?\nBased on what you have learned so far in this course, what advice would you offer the CIO as they prepare to go dark?\nBased on the information in the case, how would you rate UVA's response to this breach?  \nHow would you secure UVA so this doesn't happen again?\n\nPoints: [8 points write-up; 2 points for class discussion]\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781955,
+      "title": "Case Assignment 5 - Equifax",
+      "content": "Assignment: Case Assignment 5 - Equifax\n\nDue: 2024-11-18T15:00:00Z\nPoints: 10.0\nSubmission Types: external_tool\n\nDescription:\nThis is a link to a Gradescope assignment.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781956,
+      "title": "Case Assignment 6 - Privacy vs Safety",
+      "content": "Assignment: Case Assignment 6 - Privacy vs Safety\n\nDue: 2024-12-04T15:00:00Z\nPoints: 10.0\nSubmission Types: external_tool\n\nDescription:\nThis is a link to a Gradescope assignment.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781952,
+      "title": "Case 1 Class Discussion",
+      "content": "Assignment: Case 1 Class Discussion\n\nPoints: None\nSubmission Types: not_graded\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781959,
+      "title": "Group Exam 1",
+      "content": "Assignment: Group Exam 1\n\nDue: 2024-09-30T03:59:59Z\nPoints: 25.0\nSubmission Types: external_tool\n\nDescription:\nThis assignment MUST be completed in one sitting and should take your group a Maximum of 2 hours.  Please make a plan with your group BEFORE you open the assignment files. \nThis is a link to a Gradescope assignment.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781958,
+      "title": "Group Exam #2",
+      "content": "Assignment: Group Exam #2\n\nDue: 2024-11-11T04:59:59Z\nPoints: 25.0\nSubmission Types: external_tool\n\nDescription:\nThis assignment MUST be completed in one sitting and should take your group a MAXIMUM of 2 hours. Please make a plan with your group BEFORE you open the assignment files.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781962,
+      "title": "Mini Case Writeup",
+      "content": "Assignment: Mini Case Writeup\n\nPoints: 14.0\nSubmission Types: online_upload\n\nDescription:\nThis mini-case assignment requires you to develop a written teaching case focused on a cybersecurity topic that aligns with the course objectives. The assignment has three components: the written teaching case, a teaching note, and an in-class presentation. The teaching case should be no less than five pages and should provide a detailed exploration of a cybersecurity issue relevant to the concepts discussed in this course. The accompanying teaching note should offer guidance on how to effectively teach the case in a classroom setting. Finally, you will present your case to the class in a 15-minute presentation, which will form part of your overall grade. \n\nComponent 1: Written Teaching Case (min. 5 pages) \nYour teaching case should present a real-world scenario or hypothetical situation that illustrates a cybersecurity challenge. The case should be well-researched, providing a comprehensive overview of the issue, the key players involved, and the decisions that need to be made. It should be engaging and thought-provoking, encouraging students to apply their knowledge of cybersecurity principles, network security, threat analysis, or incident response. The case can be based on real events or can be fictional.  \n\nComponent 2: Teaching Note (min. 2 pages) \nThe teaching note is a crucial part of the assignment that helps instructors facilitate discussion and learning from the case. It should provide an overview of the case, key learning objectives, discussion questions, and potential answers or directions for the discussion. The teaching note should also suggest ways to integrate the case into the broader context of the course and how it aligns with the specific learning objectives. \n\nComponent 3: In-Class Presentation \nYou will present your teaching case to the class in a 15-minute presentation at an assigned time. This presentation is designed to simulate the process of teaching the case and leading a classroom discussion. You should summarize the key points of your case, introduce the discussion questions, and guide your peers through the decision-making process presented in the case. The presentation will be evaluated based on clarity, engagement, and the effectiveness of your teaching strategy.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781961,
+      "title": "Mini Case Presentation",
+      "content": "Assignment: Mini Case Presentation\n\nPoints: 6.0\nSubmission Types: online_upload\n\nDescription:\nPresentation Guidelines: \nTime Management: Ensure that your presentation fits within the 15-minute time frame, allowing time for introducing the case, posing questions, and engaging the class. \nEngagement: Actively engage your peers in the discussion by asking questions and encouraging participation. \nClarity: Present the case clearly, with well-organized content and logical flow. \nTeaching Strategy: Demonstrate effective teaching techniques, such as summarizing key points, asking open-ended questions, and facilitating discussion.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781957,
+      "title": "Final Exam ",
+      "content": "Assignment: Final Exam \n\nDue: 2024-12-17T22:00:00Z\nPoints: 25.0\nSubmission Types: external_tool\n\nDescription:\nFinal Exam Instructions:\n\nThe exam is an open book, open note. The only restriction is that you may not seek assistance from any other individual.Failure to follow directions will result in points being deducted from this exam.\nOnce you begin this exam, you must complete it within 120 minutes. The clock begins as soon as you download the file from Canvas. There is no formal countdown time in Blackboard, rather your professor will review system logs to ensure that your submission was received within 120 minutes of accessing the file (All SDAC accommodations will be honored). \nA late penalty of 10% will be applied for submissions exceeding this time limit. Delays in completing the exam within the allotted time due to technical issues will not be penalized.\nRecord all answers in a clean Word document and submit a PDF to Gradescope.\n\nIn your submission:\n\nStart with the honor pledge.\nYou do not need to copy the questions’ text. You just need the question number and your answer.\n\nPLEDGE: On my honor as a student, I have neither given nor received aid on this examination. I have also adhered to all restrictions documented below.Type Name to digitally sign the honor pledge (e.g., Bryan Lewis)\nRecommended Exam Planning:~ 10 minutes: read all instructions and questions.~ 30 Minutes: 3 Short Answers (12 points; about 5-6 sentences per answer).~ 60 Minutes: 1 Essay Question (13 points; about 2-4 pages (double spaced) typed).~ 20 Minutes to proofread/check.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781967,
+      "title": "Roll Call Attendance",
+      "content": "Assignment: Roll Call Attendance\n\nPoints: 0.0\nSubmission Types: external_tool\n\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781960,
+      "title": "Harvard Simulation Score",
+      "content": "Assignment: Harvard Simulation Score\n\nPoints: 0.0\nSubmission Types: none\n\nDescription:\nThis measures how closely the students followed the ideal path. A score of 19 indicates the perfect path. This score does not equate the number of collectible info the student collected; this score may be lower, as it incorporates the collection of info out-of-order.\n"
+    },
+    {
+      "type": "assignment",
+      "id": 781966,
+      "title": "Risk Register - Ungraded",
+      "content": "Assignment: Risk Register - Ungraded\n\nPoints: 0.0\nSubmission Types: external_tool\n\n"
+    },
+    {
+      "type": "lecture",
+      "id": 1010002,
+      "title": "Course Homepage",
+      "content": "Lecture: Course Homepage\n\nCourse description\nThis course covers...\n\nYour instructor\nInsert instructor photo\nInstructor name \nEmail:\nPhone number:\nOffice hours: (Insert office hours here) OR Please use Canvas Calendar to sign up for office hours. \nView detailed instructions on how to sign up for office hours via the Canvas Calendar.\n\nClass meetings\nDay(s):\nTime:\nRoom:"
+    },
+    {
+      "type": "lecture",
+      "id": 1010003,
+      "title": "Daily Schedule",
+      "content": "Lecture: Daily Schedule\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due (add due date and link assignment here)"
+    },
+    {
+      "type": "lecture",
+      "id": 1010004,
+      "title": "August 28",
+      "content": "Lecture: August 28\n\nIntroduction to the course\n\nCybersecurity and Society\nSyllabus and Course Expectations\n\nCourse Space\nCourse Materials\nGrading\n\nIce Breakers"
+    },
+    {
+      "type": "lecture",
+      "id": 1010005,
+      "title": "[Course Name Here] Homepage",
+      "content": "Lecture: [Course Name Here] Homepage\n\nWelcome to [COURSE NAME]\n\nCourse description\nThis course covers...\n\nYour instructor\nInsert instructor photo\nInstructor name \nmailto: link\nPhone number\nOffice hours: (Insert office hours here) OR Please use Canvas Calendar to sign up for office hours. \nClick here for detailed instructions on how to sign up for office hours via the Canvas Calendar. \n\nClass meetings\nDay(s):\nTime:\nRoom:"
+    },
+    {
+      "type": "lecture",
+      "id": 1010006,
+      "title": "Canvas Hackathon",
+      "content": "Lecture: Canvas Hackathon\n\nCanvas Hackathon (you should be enrolled as a teacher in this course)\n\nCourse description\nThis course provides a manager’s view of cybersecurity and privacy.  The content of the course gives a broad overview of essential concepts and methods for providing and evaluating security for organizations. This course includes an emphasis on applying analytics to understand cybersecurity threats.  In addition, the course touches on the importance of management and administration, the place information security holds in overall business risk, risk presented by the rise of the IoT, social issues such as individual privacy, and the role of public policy.\n\nYour instructors:\nProfessor Bryan Lewis - bryanlewis@virginia.edu\nhttps://www.commerce.virginia.edu/faculty/brl6m\n434.924.0076\nRouss and Robertson 228\nOffice Hours: Mon / Wed 2 – 3 PM, Fridays 11:00 AM – 12:00 PM please make an appointment at: https://at.virginia.edu/COMM4263 \nProfessor Ryan Wright - Ryan.Wright@virginia.edu\nhttp://www.commerce.virginia.edu/faculty/rtw2n\n434.924.8501\nRouss and Robertson 500\nOffice Hours: Mon / Wed 3-4 PM please make an appointment at: https://at.virginia.edu/COMM4263 \n\nClass meetings\nDay(s): M,W\nTime: 12:30-1:45 pm\nRoom: Rouss Hall 410\nAbsence Form"
+    },
+    {
+      "type": "lecture",
+      "id": 1010007,
+      "title": " [Day of Week, Month, Date] Daily Schedule",
+      "content": "Lecture:  [Day of Week, Month, Date] Daily Schedule\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010008,
+      "title": " [Day of Week, Month, Date] Daily Schedule Copy",
+      "content": "Lecture:  [Day of Week, Month, Date] Daily Schedule Copy\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Made\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010009,
+      "title": " [Day of Week, Month, Date] Daily Schedule",
+      "content": "Lecture:  [Day of Week, Month, Date] Daily Schedule\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010010,
+      "title": "Dec 2 - Privacy and the Law",
+      "content": "Lecture: Dec 2 - Privacy and the Law\n\nLearning objectives \nPrivacy as a Business and societal risk\n\nReadings\nApple:  Privacy vs Safety Case\n\nActivities/Discussion Questions \nCase Discussion\nPrivacy Q & A\n\nAssignments / Assessments\nCase Writeup - Apple"
+    },
+    {
+      "type": "lecture",
+      "id": 1010011,
+      "title": "Dec 4 - Cybercrime",
+      "content": "Lecture: Dec 4 - Cybercrime\n\nLearning objectives \nPrivacy as a Business and societal risk\n\nReadings\nApple:  Privacy vs Safety Case\n\nActivities/Discussion Questions \nCase Discussion\nPrivacy Q & A\n\nAssignments / Assessments\nCase Writeup - Apple"
+    },
+    {
+      "type": "lecture",
+      "id": 1010012,
+      "title": "Dec 4 - Cybersecurity Simulation",
+      "content": "Lecture: Dec 4 - Cybersecurity Simulation\n\nLearning objectives \nUnderstand a CISO perspective of a breech (Jason Belford, CISO at UVA) \n\nReadings\nNone\n\nActivities/Discussion Questions \nIn class, Harvard Cybersecurity Simulation\n\nAssignments / Assessments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": 1010013,
+      "title": "How can I use Canvas to enhance my course design?",
+      "content": "Lecture: How can I use Canvas to enhance my course design?\n\nAs an educator, you are both a curator and creator of course content. Following common universal design practices will help ensure that your students can access this content regardless of their abilities, and foster a positive learning environment for all. Modules can be a great way to organize assignments, quizzes, and pages with media for your students. In the sections below, you can find tips for presenting assignments, documents, and other media clearly. \nStep 1: Consider structure\nThe first step is to decide how you want to organize your course content for students. Is there a structure that is familiar to your students, whether it be from your department, school, or field of study? Some examples of structure include:\n\nWeeks or classes\nTopics or units\nChapters in a book\n\nConsider what system would make it easiest for you and your students to navigate course content.\nStep 2: Get good content\nThe second step in course development is often curating content. This could involve gathering or creating materials, such as:\n\nArticles\nDocuments\nTextbooks\nWebsite links\n Images, videos, and other media\n\nWhen finding and creating content, we recommend checking that it is accessible to all students, regardless of their strengths and abilities. For more information, see What does it mean to make content accessible?\nTip: Contact subject librarians, instructional designers, and the Student Disability Access Center for help.\nStep 3: Create assessment opportunities\nDetermine how you want to assess your students, providing multiple ways of checking student understanding. \n\nFormative assessments: Low-stakes activities that give students a chance to demonstrate their understanding while giving both students and instructors the opportunity to identify learning gaps. For more information, see the A&S Learning Design & Technology team's Formative Assessments overview. Tools you could use for formative assessments include:\n\nAssignments\nExternal tools, such as VoiceThread, Annotations (Hypothesis), or Kaltura Video Quizzes\nDiscussions\nQuizzes\n\nSummative assessments: Higher-stakes activities that evaluate a student's proficiency after the completion of an instructional unit. For more information, see the A&S Learning Design & Technology team's Summative Assessments overview.  Tools you could use for summative assessments include:\n\nQuizzes\nAssignments\nExternal tools, such as Gradescope or Peer Review\n\nStep 4: Build modules\nUsing the structure from step 1 above, create modules in your Canvas course and add your content to pages in the modules.\n\nCreate a module.\nAdd a page to the module.\nUse headings to structure the page and present concepts in small \"bite-sized\" pieces.\nGuide your students with clear and concise instructions.\nMake navigation as simple as possible by adding links to activities (e.g., assignments, discussions, quizzes) on the page. Create accessible links with uniquely descriptive link text. Examples of meaningful link text:\n\n\"Submit Week 3 Essay\" - link to an assignment.\n\"Intro to Accessibility (PDF)\" - link to an article\n \"Access the Oxford English Dictionary online\" - link to a website\n\nProvide context around embedded content. For example, if you embed a lecture video, provide a brief description of the content so that students will know what to expect when they watch it. For images, add meaningful text descriptions."
+    },
+    {
+      "type": "lecture",
+      "id": 1010014,
+      "title": "Incident Response Details",
+      "content": "Lecture: Incident Response Details\n\n"
+    },
+    {
+      "type": "lecture",
+      "id": 1010015,
+      "title": "Nov  1 - Cyber Incident Response ",
+      "content": "Lecture: Nov  1 - Cyber Incident Response \n\nLearning objectives \nUnderstand the steps for responding to an attack\nUnderstanding the steps for recovery\nUnderstand Reporting \n\nReadings\nRead Course Pack: We need global standards for reporting cyber attacks. \n\nActivities/Discussion Questions \nNone\n\nAssignments / Assessments\nReport out on November 6th"
+    },
+    {
+      "type": "lecture",
+      "id": 1010016,
+      "title": "Nov 11 - Incidence Response and Recovery: Phoenix Project",
+      "content": "Lecture: Nov 11 - Incidence Response and Recovery: Phoenix Project\n\nLearning objectives \nUnderstand how cybersecurity attacks typically happen to organizations. \nUnderstanding how organizations respond to cybersecurity attacks.\nUnderstand mitigation of cybersecurity crisis.\n\nReadings\nCourse Pack: The Phoenix Project: Remediation of a Cybersecurity Crisis at the University of Virginia\nOptional: UVA Press Release                                                       \n\nActivities/Discussion Questions \nIn-class case discussion. Be prepared to talk about your discussion question answers. \nClass Activity: Understand how to mitigate risk (Phoenix Project risk reg.docx)\n\nAssignment\nOnline Case Discussion Questions\nDue midnight Nov. 11th"
+    },
+    {
+      "type": "lecture",
+      "id": 1010017,
+      "title": "Nov 13 -  Incident Response and Recovery III: Cyber Tools",
+      "content": "Lecture: Nov 13 -  Incident Response and Recovery III: Cyber Tools\n\nLearning objectives \nUnderstand how OSNIT and AI Tools\nLearn more about reporting requirements\n\nReadings\nOnline: What is OSNIT?\n\nActivities/Discussion Questions \nIn Class report out for table tops\n\nAssignments / Assessments\nSubmit Summary Slide"
+    },
+    {
+      "type": "lecture",
+      "id": 1010018,
+      "title": "Nov 13 -  OSINT and AI",
+      "content": "Lecture: Nov 13 -  OSINT and AI\n\nLearning objectives \nIntroduction Open Source Intelligence Tools and Techniques \nIntroduction to AI in Hacking\n\nReadings\nRead CP: The New Risks ChatGPT Poses to Cybersecurity\n\nActivities/Discussion Questions \nIn Class: Develop a Phishing Email for Prof. Lewis\n\nAssignments / Assessments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": 1010019,
+      "title": "Nov 18 - Equifax and Incident Response",
+      "content": "Lecture: Nov 18 - Equifax and Incident Response\n\nLearning objectives \nEquifax and Incident Response\n\nReadings\nEquifax Case\n\nActivities/Discussion Questions \nCase Discussion\n\nAssignments / Assessments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": 1010020,
+      "title": "Nov 20 -  Case Discussions",
+      "content": "Lecture: Nov 20 -  Case Discussions\n\nLearning objectives \nResponding to cyber threats\nUnderstanding/practicing response strategies \n\nReadings\nCase: The Silent Strom\nCase: Stuxsneak\n\nActivities/Discussion Questions \nCome prepared with answers to the three questions in each case. You may be called on to provide your answer to any of the questions. \n\nAssignments / Assessments"
+    },
+    {
+      "type": "lecture",
+      "id": 1010021,
+      "title": "Nov 25 - Hardware Hacking / Privacy",
+      "content": "Lecture: Nov 25 - Hardware Hacking / Privacy\n\nNov 25 - Hardware Hacking\n\nLearning objectives \nIntroduction to a hardware hacker Joe Grand\nDiscussion of Response\n\nReadings\n\nActivities/Discussion Questions \nRequired: Intro to Joe Grand (Kingpin)Links to an external site.\nOptional: How I hacked a hardware crypto wallet and recovered $2 millionLinks to an external site.\n\nAssignments / Assessments\nGuest Speaker Discussion"
+    },
+    {
+      "type": "lecture",
+      "id": 1010022,
+      "title": "Nov 25 - Privacy I",
+      "content": "Lecture: Nov 25 - Privacy I\n\nLearning objectives \nPrivacy as a Business and societal risk\n\nReadings\nApple:  Privacy vs Safety Case\n\nActivities/Discussion Questions \nCase Discussion\nPrivacy Q & A\n\nAssignments / Assessments\nCase Writeup - Apple"
+    },
+    {
+      "type": "lecture",
+      "id": 1010023,
+      "title": "Nov 4: Social Engineering Case Discussion",
+      "content": "Lecture: Nov 4: Social Engineering Case Discussion\n\nLearning objectives \n\nDescribe the current landscape of cybersecurity threats, specifically with regard to social engineering attack vectors.\nAnalyze past breaches faced by UVA and articulate the challenges faced in defending against social engineering threats.\nExplore the role of organizational resilience in mitigating social engineering attacks and how an individual plays a role in making an organization vulnerable.\n\nReadings\nCase: The Human Factor: Social Engineering and Cybersecurity at the University of Virginia      \n\nActivities/Discussion Questions \nComplete Case Discussion Night Before"
+    },
+    {
+      "type": "lecture",
+      "id": 1010024,
+      "title": "Nov 6 -  Incidence Response and Recovery I: Table Top Simulation",
+      "content": "Lecture: Nov 6 -  Incidence Response and Recovery I: Table Top Simulation\n\nLearning objectives \nUnderstand how table tops work\nPractice your incident response skills   \n\nReadings\nNone\n\nActivities/Discussion Questions \nIn Class: Table Top Simulation\n\nAssignments / Assessments\nReport out on November 13th"
+    },
+    {
+      "type": "lecture",
+      "id": 1010025,
+      "title": "Oct 16 -  Security Operations I: The Security Organizations",
+      "content": "Lecture: Oct 16 -  Security Operations I: The Security Organizations\n\nLearning objectives \nUnderstanding the role of policies\nUnderstand data classification standards\nImplementing  Security Frameworks\n\nReadings\nTextbook: Chapter 5: Security Operations and Administration (pg. 128-141) \nWebsite: UVA's Data Classification\nWebsite: UVA's Security Policies \n\nActivities/Discussion Questions \nIn-class Activity: Case Study on Bank Heist and best practices exercise (time permitting)\n\nAssignments / Assessments\nReading Quiz #5 (Textbook reading)\nLab 4: Performing a Web Site and Database Attack by Exploiting Identified Vulnerabilities (Due Tuesday 10/15)"
+    },
+    {
+      "type": "lecture",
+      "id": 1010026,
+      "title": "Oct 2 & 7 - Cyber Attacks II & III",
+      "content": "Lecture: Oct 2 & 7 - Cyber Attacks II & III\n\nLearning objectives \nUnderstand techniques used by hackers\nUnderstand tools used by hackers\n\nReadings\nChapter 2: Attacks\n\nActivities/Discussion Questions \nReading Quiz on Chapter 4\n\nAssignments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": 1010027,
+      "title": "Oct 21 -  Security Operations II: The Security Leader",
+      "content": "Lecture: Oct 21 -  Security Operations II: The Security Leader\n\nLearning objectives \nDiscussion about the CISO\nDiscussion about security incident stakeholders\n\nReadings\nCourse Pack: Rise of the CISO Podcast\n\nActivities/Discussion Questions \nIn-class Activity: Stakeholders during a cyber breach\n\nAssignments\nLab 5: Performing a DDos (Due Sunday 10/27)"
+    },
+    {
+      "type": "lecture",
+      "id": 1010028,
+      "title": "Oct 23 -  Cybersecurity and the Board",
+      "content": "Lecture: Oct 23 -  Cybersecurity and the Board\n\nLearning objectives \nUnderstand the role of the board of directors and cybersecurity\nUnderstand the new SEC rules \n\nReadings\nRead Course Pack: Is Your Board Prepared for New Cybersecurity Regulations?\nOptional: A Tool to Help Boards Measure Cyber Resilience\n\nActivities/Discussion Questions \nDiscussion with Guest Speaker: Dr. Keri Pearlson \n\nAssignments / Assessments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": 1010029,
+      "title": "Oct 23 - Security Operations III: Pen Testing",
+      "content": "Lecture: Oct 23 - Security Operations III: Pen Testing\n\nLearning objectives \nUnderstand the role of penetration testing (pen testing) in network security.\nDiscussion of the tools used in pen testing \n\nReadings\nNone\n\nActivities/Discussion Questions \nNone\n\nAssignments / Assessments\nLab 5: Performing an DDos Attack (Due Sunday 10/27)"
+    },
+    {
+      "type": "lecture",
+      "id": 1010030,
+      "title": "Oct 28 -  Building Org Resilience I: What is Resilience",
+      "content": "Lecture: Oct 28 -  Building Org Resilience I: What is Resilience\n\nLearning objectives \nUnderstand organizational resilience\nUnderstand what makes security teams effective\nHandling Board of Directors\n\nReadings\nRead Course Pack: When cyberattacks are inevitable focus on cyber resilience \n\nActivities/Discussion Questions \n\nAssignments / Assessments\nDue Discussion Questions (Sunday 10/27)"
+    },
+    {
+      "type": "lecture",
+      "id": 1010031,
+      "title": "Oct 30 - Human Firewall",
+      "content": "Lecture: Oct 30 - Human Firewall\n\nLearning objectives \nUnderstand how to protect against social engineering attacks\nLearn about the role of phishing simulation\n\nReadings\nRead Course Pack: Boost Your Resistance to Phishing Attacks & Phishing Tests are Necessary. But, They Don’t have to be Evil.\n\nAssignments / Assessments\nDue Reading Quiz #6"
+    },
+    {
+      "type": "lecture",
+      "id": 1010032,
+      "title": "Oct 9 -  Cyber Attacks IV: Frameworks",
+      "content": "Lecture: Oct 9 -  Cyber Attacks IV: Frameworks\n\nLearning objectives \nContinued discussion from Cyber Attacks lecture\nIntroduction to The Cybersecurity Framework\nIntroduction to MITRA ATT@CK\nOther frameworks\n\nReadings\nNIST Cybersecurity Framework (Read Webpage)\nMITRE Att@ck (Read Webpage and View Video)\n\nActivities/Discussion Questions \nGroups: Come ready to discuss these frameworks\n\nAssignments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": 1010033,
+      "title": "Request Absence",
+      "content": "Lecture: Request Absence\n\n"
+    },
+    {
+      "type": "lecture",
+      "id": 1010034,
+      "title": "Resources",
+      "content": "Lecture: Resources\n\nHere are a list of some of our favorite online resources:\nCybersecurity Glossary: https://tryhackme.com/r/glossary\nList of major breaches: https://privacyrights.org/data-breaches"
+    },
+    {
+      "type": "lecture",
+      "id": 1010035,
+      "title": "Sept 30 - Cyber Attacks: Hackers",
+      "content": "Lecture: Sept 30 - Cyber Attacks: Hackers\n\nLearning objectives \nUnderstand who is attacking organizations\nUnderstanding why people are attacking organizations\nIntro to Lab 3: Deploying Endpoint Defenses\n\nReadings\nVerizon Data Breach Report 2024 (Read 1-14, 61[Educational Services])Optional: Social Engineering (36-40), Incident Classification (28-32)\nOptional: Cyber Crimes Gangs                                                       \n\nActivities/Discussion Questions \nGroups come prepared to answer:\n\nYour team has been named after a hacker group. Research the history of this group and analyze one of their most significant cyberattacks.\nWhat are their motives and where are they from?"
+    },
+    {
+      "type": "lecture",
+      "id": 1010036,
+      "title": "September 11 - Networks III: LANS to WANS & Defensive Technologies",
+      "content": "Lecture: September 11 - Networks III: LANS to WANS & Defensive Technologies\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nWhat is a VPN? - https://www.youtube.com/watch?v=_wQTRMBAvzg\nLetting the Hackers in -\nhttps://www.cnn.com/videos/business/2018/10/01/work-transformed-cybersecurity-jlm-lon-orig.cnn-business/video/playlists/business-work-transformed/\n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010037,
+      "title": "September 16 - Networks IV: Defensive Technologies",
+      "content": "Lecture: September 16 - Networks IV: Defensive Technologies\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=_wQTRMBAvzg             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010038,
+      "title": "September 18 - Networks V: Encryption",
+      "content": "Lecture: September 18 - Networks V: Encryption\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=wXB-V_Keiu8             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010039,
+      "title": "September 2 - NetPetya and the Dark Web",
+      "content": "Lecture: September 2 - NetPetya and the Dark Web\n\nAssignment:\nCase Write-up Instructions on Gradescope\nVideo(s)  \nZero Days - Featurette           \nRoss Ulbricht - Silk Road Founder"
+    },
+    {
+      "type": "lecture",
+      "id": 1010040,
+      "title": "September 23 - Networks VI: Encryption Part 2",
+      "content": "Lecture: September 23 - Networks VI: Encryption Part 2\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=wXB-V_Keiu8             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010041,
+      "title": "September 25 - Networks VII: Authentication and Access Control",
+      "content": "Lecture: September 25 - Networks VII: Authentication and Access Control\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=wXB-V_Keiu8             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010042,
+      "title": "September 4 - Networks I: The Internet",
+      "content": "Lecture: September 4 - Networks I: The Internet\n\nReadings  \nTextbook: Networks Chapter 1                                                   \n\nActivities/Discussion Questions \nIn class reading quiz"
+    },
+    {
+      "type": "lecture",
+      "id": 1010043,
+      "title": "September 9 - Networks II: LANS to WANS",
+      "content": "Lecture: September 9 - Networks II: LANS to WANS\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": 1010044,
+      "title": "Table Top Group Info",
+      "content": "Lecture: Table Top Group Info\n\n"
+    },
+    {
+      "type": "lecture",
+      "id": 1010045,
+      "title": "TWIST Presentation",
+      "content": "Lecture: TWIST Presentation\n\nThe \"This Week in Security Tech\" (TWIST) are 10-minute (max) presentation that will be done at the beginning of class. Presentations will start at 12:30 pm sharp and end at 12:40 pm sharp.\nFor this assignment, you and your group will present and develop a report of a topic chosen from a list of options. The presentation should be non-technical and for an executive (C-suite) audience. In preparing your presentation, focus on the following questions to guide the paper and the presentation:\n1.    What happened / What is this? \n2.    What is the impact or potential impact?\n3.    How can / could risk be mitigated or what is this technology offer?\n4.    What are the take-aways that executives would be interested in?\nYou do not have to answer the question explicitly. They are guideposts.  \nComplementarity News Sources:  Although the topic is provided, we ask they you evaluate other published materials when applicable. There is no shortage of news or sources for news on cybersecurity threats.  Some recommended sources include (but in no way are limited to):\n1.    Naked Security (nakedsecurity.sophos.com)\n2.    Krebs on security (krebsonsecurity.com)\n3.    Security Week (securityweek.com)   \nTopics: The topics will be selected during the second week of the course.\nRequirements (submitted BEFORE the presentation):\n\nPPT or PDF deck\nTwo-page single spaced memo."
+    },
+    {
+      "type": "lecture",
+      "id": 1010046,
+      "title": "TWIST Topics",
+      "content": "Lecture: TWIST Topics\n\nHere is a list of potential topics for TWIST:\nWhat we should know about the Twitter hack. See: https://krebsonsecurity.com/2020/07/whos-behind-wednesdays-epic-twitter-hack/ \nAmerican Data Privacy and Protection ActSee: https://www.lawfareblog.com/bipartisan-house-privacy-bill-would-surpass-state-protections \nHow the pandemic has changed Cybersecurity.See: https://www.zdnet.com/article/roundup-the-coronavirus-pandemic-delivers-an-array-of-cyber-security-challenges/ \nImpact of Breaches on ExecutiveSee: https://www.wired.com/story/uber-exec-joe-sullivan-data-breach-indictment/ \nThe impacts of AI on cybersecurity:https://www.computer.org/publications/tech-news/trends/the-impact-of-ai-on-cybersecurity\nhttps://www.forbes.com/sites/forbestechcouncil/2023/03/15/how-ai-is-disrupting-and-transforming-the-cybersecurity-landscape/?sh=395b7e2c4683\nThis list is not exhaustive!  If you have another topic that you think is relevant please contact your faculty advisor."
+    },
+    {
+      "type": "lecture",
+      "id": "module_420837_1830422",
+      "title": "McIntire - Course Homepage",
+      "content": "Module: McIntire - Course Homepage\n\nCourse description\nThis course covers...\n\nYour instructor\nInsert instructor photo\nInstructor name \nEmail:\nPhone number:\nOffice hours: (Insert office hours here) OR Please use Canvas Calendar to sign up for office hours. \nView detailed instructions on how to sign up for office hours via the Canvas Calendar.\n\nClass meetings\nDay(s):\nTime:\nRoom:"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420837_1830423",
+      "title": "McIntire - Daily Schedule",
+      "content": "Module: McIntire - Daily Schedule\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due (add due date and link assignment here)"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830438",
+      "title": "Mod 1: Cybersecurity Infrastructure - Canvas Hackathon",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - Canvas Hackathon\n\nCanvas Hackathon (you should be enrolled as a teacher in this course)\n\nCourse description\nThis course provides a manager’s view of cybersecurity and privacy.  The content of the course gives a broad overview of essential concepts and methods for providing and evaluating security for organizations. This course includes an emphasis on applying analytics to understand cybersecurity threats.  In addition, the course touches on the importance of management and administration, the place information security holds in overall business risk, risk presented by the rise of the IoT, social issues such as individual privacy, and the role of public policy.\n\nYour instructors:\nProfessor Bryan Lewis - bryanlewis@virginia.edu\nhttps://www.commerce.virginia.edu/faculty/brl6m\n434.924.0076\nRouss and Robertson 228\nOffice Hours: Mon / Wed 2 – 3 PM, Fridays 11:00 AM – 12:00 PM please make an appointment at: https://at.virginia.edu/COMM4263 \nProfessor Ryan Wright - Ryan.Wright@virginia.edu\nhttp://www.commerce.virginia.edu/faculty/rtw2n\n434.924.8501\nRouss and Robertson 500\nOffice Hours: Mon / Wed 3-4 PM please make an appointment at: https://at.virginia.edu/COMM4263 \n\nClass meetings\nDay(s): M,W\nTime: 12:30-1:45 pm\nRoom: Rouss Hall 410\nAbsence Form"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830439",
+      "title": "Mod 1: Cybersecurity Infrastructure - Course Schedule",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - Course Schedule\n\nExternal URL: https://virginia.box.com/s/5a8tzc4k4ot31tj2zliv9ssqtuwkw5wt\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830440",
+      "title": "Mod 1: Cybersecurity Infrastructure - August 28",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - August 28\n\nIntroduction to the course\n\nCybersecurity and Society\nSyllabus and Course Expectations\n\nCourse Space\nCourse Materials\nGrading\n\nIce Breakers"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830442",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 2 - NetPetya and the Dark Web",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 2 - NetPetya and the Dark Web\n\nAssignment:\nCase Write-up Instructions on Gradescope\nVideo(s)  \nZero Days - Featurette           \nRoss Ulbricht - Silk Road Founder"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830445",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 4 - Networks I: The Internet",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 4 - Networks I: The Internet\n\nReadings  \nTextbook: Networks Chapter 1                                                   \n\nActivities/Discussion Questions \nIn class reading quiz"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830448",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 9 - Networks II: LANS to WANS",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 9 - Networks II: LANS to WANS\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830452",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 11 - Networks III: LANS to WANS & Defensive Technologies",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 11 - Networks III: LANS to WANS & Defensive Technologies\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nWhat is a VPN? - https://www.youtube.com/watch?v=_wQTRMBAvzg\nLetting the Hackers in -\nhttps://www.cnn.com/videos/business/2018/10/01/work-transformed-cybersecurity-jlm-lon-orig.cnn-business/video/playlists/business-work-transformed/\n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830456",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 16 - Networks IV: Defensive Technologies",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 16 - Networks IV: Defensive Technologies\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=_wQTRMBAvzg             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830459",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 18 - Networks V: Encryption",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 18 - Networks V: Encryption\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=wXB-V_Keiu8             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830462",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 23 - Networks VI: Encryption Part 2",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 23 - Networks VI: Encryption Part 2\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=wXB-V_Keiu8             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420841_1830464",
+      "title": "Mod 1: Cybersecurity Infrastructure - September 25 - Networks VII: Authentication and Access Control",
+      "content": "Module: Mod 1: Cybersecurity Infrastructure - September 25 - Networks VII: Authentication and Access Control\n\nTopics/Learning objectives \n\nReadings                                                      \n\nVideo(s)\nhttps://www.youtube.com/watch?v=wXB-V_Keiu8             \n\nActivities/Discussion Questions \n\nAssignments\nAssignment Due add due date and link assignment here"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830468",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Sept 30 - Cyber Attacks: Hackers",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Sept 30 - Cyber Attacks: Hackers\n\nLearning objectives \nUnderstand who is attacking organizations\nUnderstanding why people are attacking organizations\nIntro to Lab 3: Deploying Endpoint Defenses\n\nReadings\nVerizon Data Breach Report 2024 (Read 1-14, 61[Educational Services])Optional: Social Engineering (36-40), Incident Classification (28-32)\nOptional: Cyber Crimes Gangs                                                       \n\nActivities/Discussion Questions \nGroups come prepared to answer:\n\nYour team has been named after a hacker group. Research the history of this group and analyze one of their most significant cyberattacks.\nWhat are their motives and where are they from?"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830471",
+      "title": "Mod 2: Cybersecurity Attack Vectors - DarkNet Diaries: Coalfire Disaster (optional)",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - DarkNet Diaries: Coalfire Disaster (optional)\n\nExternal URL: https://www.youtube.com/watch?v=Y0AbHKcIQxk\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830472",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 2 & 7 - Cyber Attacks II & III",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 2 & 7 - Cyber Attacks II & III\n\nLearning objectives \nUnderstand techniques used by hackers\nUnderstand tools used by hackers\n\nReadings\nChapter 2: Attacks\n\nActivities/Discussion Questions \nReading Quiz on Chapter 4\n\nAssignments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830475",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 9 -  Cyber Attacks IV: Frameworks",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 9 -  Cyber Attacks IV: Frameworks\n\nLearning objectives \nContinued discussion from Cyber Attacks lecture\nIntroduction to The Cybersecurity Framework\nIntroduction to MITRA ATT@CK\nOther frameworks\n\nReadings\nNIST Cybersecurity Framework (Read Webpage)\nMITRE Att@ck (Read Webpage and View Video)\n\nActivities/Discussion Questions \nGroups: Come ready to discuss these frameworks\n\nAssignments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830476",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 16 -  Security Operations I: The Security Organizations",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 16 -  Security Operations I: The Security Organizations\n\nLearning objectives \nUnderstanding the role of policies\nUnderstand data classification standards\nImplementing  Security Frameworks\n\nReadings\nTextbook: Chapter 5: Security Operations and Administration (pg. 128-141) \nWebsite: UVA's Data Classification\nWebsite: UVA's Security Policies \n\nActivities/Discussion Questions \nIn-class Activity: Case Study on Bank Heist and best practices exercise (time permitting)\n\nAssignments / Assessments\nReading Quiz #5 (Textbook reading)\nLab 4: Performing a Web Site and Database Attack by Exploiting Identified Vulnerabilities (Due Tuesday 10/15)"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830479",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 21 -  Security Operations II: The Security Leader",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 21 -  Security Operations II: The Security Leader\n\nLearning objectives \nDiscussion about the CISO\nDiscussion about security incident stakeholders\n\nReadings\nCourse Pack: Rise of the CISO Podcast\n\nActivities/Discussion Questions \nIn-class Activity: Stakeholders during a cyber breach\n\nAssignments\nLab 5: Performing a DDos (Due Sunday 10/27)"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830482",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 23 - Security Operations III: Pen Testing",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 23 - Security Operations III: Pen Testing\n\nLearning objectives \nUnderstand the role of penetration testing (pen testing) in network security.\nDiscussion of the tools used in pen testing \n\nReadings\nNone\n\nActivities/Discussion Questions \nNone\n\nAssignments / Assessments\nLab 5: Performing an DDos Attack (Due Sunday 10/27)"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830485",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 28 -  Building Org Resilience I: What is Resilience",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 28 -  Building Org Resilience I: What is Resilience\n\nLearning objectives \nUnderstand organizational resilience\nUnderstand what makes security teams effective\nHandling Board of Directors\n\nReadings\nRead Course Pack: When cyberattacks are inevitable focus on cyber resilience \n\nActivities/Discussion Questions \n\nAssignments / Assessments\nDue Discussion Questions (Sunday 10/27)"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830488",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Optional Reading: A Tool to Help Boards Measure Cyber Resilience",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Optional Reading: A Tool to Help Boards Measure Cyber Resilience\n\nExternal URL: https://hbr.org/2023/10/a-tool-to-help-boards-measure-cyber-resilience\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830489",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 30 - Human Firewall",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 30 - Human Firewall\n\nLearning objectives \nUnderstand how to protect against social engineering attacks\nLearn about the role of phishing simulation\n\nReadings\nRead Course Pack: Boost Your Resistance to Phishing Attacks & Phishing Tests are Necessary. But, They Don’t have to be Evil.\n\nAssignments / Assessments\nDue Reading Quiz #6"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830492",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Nov 4: Social Engineering Case Discussion",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Nov 4: Social Engineering Case Discussion\n\nLearning objectives \n\nDescribe the current landscape of cybersecurity threats, specifically with regard to social engineering attack vectors.\nAnalyze past breaches faced by UVA and articulate the challenges faced in defending against social engineering threats.\nExplore the role of organizational resilience in mitigating social engineering attacks and how an individual plays a role in making an organization vulnerable.\n\nReadings\nCase: The Human Factor: Social Engineering and Cybersecurity at the University of Virginia      \n\nActivities/Discussion Questions \nComplete Case Discussion Night Before"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420842_1830502",
+      "title": "Mod 2: Cybersecurity Attack Vectors - Oct 23 -  Cybersecurity and the Board",
+      "content": "Module: Mod 2: Cybersecurity Attack Vectors - Oct 23 -  Cybersecurity and the Board\n\nLearning objectives \nUnderstand the role of the board of directors and cybersecurity\nUnderstand the new SEC rules \n\nReadings\nRead Course Pack: Is Your Board Prepared for New Cybersecurity Regulations?\nOptional: A Tool to Help Boards Measure Cyber Resilience\n\nActivities/Discussion Questions \nDiscussion with Guest Speaker: Dr. Keri Pearlson \n\nAssignments / Assessments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830505",
+      "title": "Mod 3: Cybersecurity Response - Nov 6 -  Incidence Response and Recovery I: Table Top Simulation",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov 6 -  Incidence Response and Recovery I: Table Top Simulation\n\nLearning objectives \nUnderstand how table tops work\nPractice your incident response skills   \n\nReadings\nNone\n\nActivities/Discussion Questions \nIn Class: Table Top Simulation\n\nAssignments / Assessments\nReport out on November 13th"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830506",
+      "title": "Mod 3: Cybersecurity Response - Incident Response Details",
+      "content": "Module: Mod 3: Cybersecurity Response - Incident Response Details\n\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830509",
+      "title": "Mod 3: Cybersecurity Response - Nov 11 - Incidence Response and Recovery: Phoenix Project",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov 11 - Incidence Response and Recovery: Phoenix Project\n\nLearning objectives \nUnderstand how cybersecurity attacks typically happen to organizations. \nUnderstanding how organizations respond to cybersecurity attacks.\nUnderstand mitigation of cybersecurity crisis.\n\nReadings\nCourse Pack: The Phoenix Project: Remediation of a Cybersecurity Crisis at the University of Virginia\nOptional: UVA Press Release                                                       \n\nActivities/Discussion Questions \nIn-class case discussion. Be prepared to talk about your discussion question answers. \nClass Activity: Understand how to mitigate risk (Phoenix Project risk reg.docx)\n\nAssignment\nOnline Case Discussion Questions\nDue midnight Nov. 11th"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830513",
+      "title": "Mod 3: Cybersecurity Response - Nov 13 -  Incident Response and Recovery III: Cyber Tools",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov 13 -  Incident Response and Recovery III: Cyber Tools\n\nLearning objectives \nUnderstand how OSNIT and AI Tools\nLearn more about reporting requirements\n\nReadings\nOnline: What is OSNIT?\n\nActivities/Discussion Questions \nIn Class report out for table tops\n\nAssignments / Assessments\nSubmit Summary Slide"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830515",
+      "title": "Mod 3: Cybersecurity Response - Nov 18 - Equifax and Incident Response",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov 18 - Equifax and Incident Response\n\nLearning objectives \nEquifax and Incident Response\n\nReadings\nEquifax Case\n\nActivities/Discussion Questions \nCase Discussion\n\nAssignments / Assessments\nNone"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830519",
+      "title": "Mod 3: Cybersecurity Response - Nov 20 -  Case Discussions",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov 20 -  Case Discussions\n\nLearning objectives \nResponding to cyber threats\nUnderstanding/practicing response strategies \n\nReadings\nCase: The Silent Strom\nCase: Stuxsneak\n\nActivities/Discussion Questions \nCome prepared with answers to the three questions in each case. You may be called on to provide your answer to any of the questions. \n\nAssignments / Assessments"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830523",
+      "title": "Mod 3: Cybersecurity Response - Reading: What is OSNIT?",
+      "content": "Module: Mod 3: Cybersecurity Response - Reading: What is OSNIT?\n\nExternal URL: https://www.ibm.com/topics/osint\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830524",
+      "title": "Mod 3: Cybersecurity Response - Example OSINT Tools",
+      "content": "Module: Mod 3: Cybersecurity Response - Example OSINT Tools\n\nExternal URL: https://github.com/MetaOSINT/MetaOSINT.github.io\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830525",
+      "title": "Mod 3: Cybersecurity Response - OSNIT Framework",
+      "content": "Module: Mod 3: Cybersecurity Response - OSNIT Framework\n\nExternal URL: https://www.osintframework.com/\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830526",
+      "title": "Mod 3: Cybersecurity Response - Nov 25 - Hardware Hacking / Privacy",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov 25 - Hardware Hacking / Privacy\n\nNov 25 - Hardware Hacking\n\nLearning objectives \nIntroduction to a hardware hacker Joe Grand\nDiscussion of Response\n\nReadings\n\nActivities/Discussion Questions \nRequired: Intro to Joe Grand (Kingpin)Links to an external site.\nOptional: How I hacked a hardware crypto wallet and recovered $2 millionLinks to an external site.\n\nAssignments / Assessments\nGuest Speaker Discussion"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830528",
+      "title": "Mod 3: Cybersecurity Response - Required: Confessions of a Hacker known as Kingpin - Joe Grand Story (12 minutes)",
+      "content": "Module: Mod 3: Cybersecurity Response - Required: Confessions of a Hacker known as Kingpin - Joe Grand Story (12 minutes)\n\nExternal URL: https://youtu.be/5bcbmef4I3I\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830529",
+      "title": "Mod 3: Cybersecurity Response - Optional: How I hacked a hardware crypto wallet and recovered $2 million (32 minutes)",
+      "content": "Module: Mod 3: Cybersecurity Response - Optional: How I hacked a hardware crypto wallet and recovered $2 million (32 minutes)\n\nExternal URL: https://youtu.be/dT9y-KQbqi4\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830531",
+      "title": "Mod 3: Cybersecurity Response - Dec 2 - Privacy and the Law",
+      "content": "Module: Mod 3: Cybersecurity Response - Dec 2 - Privacy and the Law\n\nLearning objectives \nPrivacy as a Business and societal risk\n\nReadings\nApple:  Privacy vs Safety Case\n\nActivities/Discussion Questions \nCase Discussion\nPrivacy Q & A\n\nAssignments / Assessments\nCase Writeup - Apple"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830534",
+      "title": "Mod 3: Cybersecurity Response - Dec 4 - Cybercrime",
+      "content": "Module: Mod 3: Cybersecurity Response - Dec 4 - Cybercrime\n\nLearning objectives \nPrivacy as a Business and societal risk\n\nReadings\nApple:  Privacy vs Safety Case\n\nActivities/Discussion Questions \nCase Discussion\nPrivacy Q & A\n\nAssignments / Assessments\nCase Writeup - Apple"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830537",
+      "title": "Mod 3: Cybersecurity Response - Nov  1 - Cyber Incident Response ",
+      "content": "Module: Mod 3: Cybersecurity Response - Nov  1 - Cyber Incident Response \n\nLearning objectives \nUnderstand the steps for responding to an attack\nUnderstanding the steps for recovery\nUnderstand Reporting \n\nReadings\nRead Course Pack: We need global standards for reporting cyber attacks. \n\nActivities/Discussion Questions \nNone\n\nAssignments / Assessments\nReport out on November 6th"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420843_1830541",
+      "title": "Mod 3: Cybersecurity Response - Student Course Evaluation (Nov 28 to Dec 8) - Point on Final",
+      "content": "Module: Mod 3: Cybersecurity Response - Student Course Evaluation (Nov 28 to Dec 8) - Point on Final\n\nExternal URL: https://in.virginia.edu/CourseXperience\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420845_1830555",
+      "title": "Material - Student Honor Code",
+      "content": "Module: Material - Student Honor Code\n\nExternal URL: https://honor.virginia.edu/\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420845_1830556",
+      "title": "Material - Accessing Your Coursepack",
+      "content": "Module: Material - Accessing Your Coursepack\n\nExternal URL: https://help.hbsp.harvard.edu/hc/en-us/articles/1500002412222-Accessing-a-Coursepack-Assigned-to-You\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420845_1830557",
+      "title": "Material - Harvard Coursepack",
+      "content": "Module: Material - Harvard Coursepack\n\nExternal URL: https://hbsp.harvard.edu/coursepacks/1074365\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420845_1830558",
+      "title": "Material - Request Appointment",
+      "content": "Module: Material - Request Appointment\n\nExternal URL: https://at.virginia.edu/COMM4263\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420845_1830559",
+      "title": "Material - Request Absence",
+      "content": "Module: Material - Request Absence\n\nExternal URL: https://commercevirginia.co1.qualtrics.com/jfe/form/SV_8IaF7iZ06rLx1NY\n"
+    },
+    {
+      "type": "lecture",
+      "id": "module_420845_1830560",
+      "title": "Material - Resources",
+      "content": "Module: Material - Resources\n\nHere are a list of some of our favorite online resources:\nCybersecurity Glossary: https://tryhackme.com/r/glossary\nList of major breaches: https://privacyrights.org/data-breaches"
+    }
+  ]
+}
