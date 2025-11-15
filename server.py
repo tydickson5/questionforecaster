@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from canvasreader import CanvasReader 
-from embedding import QuizParser
+from embedding import QuizParser, AssignmentParser
 
 import json
 
@@ -60,7 +60,7 @@ def forecast():
             return jsonify({"sections": data})
         else:
             assignment_data = reader.get_assignment(assignment_id)
-            parser = QuizParser(assignment_data)
+            parser = AssigmentParser(assignment_data)
             data = parser.parse()
             return jsonify({"sections": data})
 

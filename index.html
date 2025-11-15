@@ -1,219 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Question Forecaster</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-    .course {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .section-title {
-      font-size: 20px;
-      margin-top: 15px;
-      margin-bottom: 8px;
-    }
-    .item-row {
-      display: flex;
-      justify-content: space-between;
-      background: #f7f7f7;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 8px;
-    }
-    button {
-      padding: 6px 14px;
-      border: none;
-      border-radius: 8px;
-      background: #4a6cf7;
-      color: white;
-      cursor: pointer;
-    }
-    #forecastContainer {
-      max-width: 700px;
-      margin: 20px auto;
-      display: none;
-    }
-    .forecast-section {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    textarea {
-      width: 100%;
-      border-radius: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    #nextBtn {
-      display: block;
-      margin: 20px auto;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Question Forecaster</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f3f3f3; margin: 0; padding: 20px; }
+h1 { text-align: center; font-size: 32px; margin-bottom: 20px; }
+.course { background: white; padding: 20px; margin: 20px auto; max-width: 700px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.section-title { font-size: 20px; margin-top: 15px; margin-bottom: 8px; }
+.item-row { display: flex; justify-content: space-between; background: #f7f7f7; padding: 10px; border-radius: 10px; margin-bottom: 8px; }
+button { padding: 6px 14px; border: none; border-radius: 8px; background: #4a6cf7; color: white; cursor: pointer; }
+.forecast-sections { margin-top: 10px; }
+.forecast-section { background: white; padding: 15px; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+textarea { width: 100%; border-radius: 10px; padding: 10px; border: 1px solid #ccc; }
+</style>
 </head>
 <body>
-  <h1>Question Forecaster</h1>
+<h1>Question Forecaster</h1>
+<div id="courses"></div>
 
-  <div id="courses"></div>
-
-  <div id="forecastContainer">
-    <h2 id="forecastTitle" style="text-align:center"></h2>
-    <div id="forecastSections"></div>
-    <button id="nextBtn">Reveal Next Section</button>
-  </div>
-
-  <script>
-
-
-    async function getForecast(type, assignment) {
-        try {
-            const response = await fetch("http://127.0.0.1:5000/forecast", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ 
-                    title: type,
-                    assignment: assignment
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error("Server error: " + response.status);
-            }
-
-            const data = await response.json();
-            console.log(data.sections); 
-            return data.sections; // an array of text sections
-        } 
-        catch (error) {
-            console.error("Forecast request failed:", error);
-            return ["Error: Unable to fetch forecast."];
-        }
+<script>
+async function getForecast(type, assignment) {
+    try {
+        const response = await fetch("http://127.0.0.1:5000/forecast", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title: type, assignment: assignment })
+        });
+        if (!response.ok) throw new Error("Server error: " + response.status);
+        const data = await response.json();
+        return data.sections;
+    } catch (err) {
+        console.error("Forecast request failed:", err);
+        return ["Error: Unable to fetch forecast."];
     }
+}
 
-    getForecast("quiz", 155647)
+const coursesDiv = document.getElementById("courses");
 
+// Render all quizzes and assignments dynamically
+async function renderAll() {
+    const allItems = await getForecast("All", 0); // type="All"
+    
+    // Group items by course name (optional) or just list
+    const courseGroups = {};
+    allItems.forEach(item => {
+        const courseName = item.course || "Course"; // if your backend includes a course field
+        if (!courseGroups[courseName]) courseGroups[courseName] = [];
+        courseGroups[courseName].push(item);
+    });
 
-    const mockCourses = [
-      {
-        name: "Intro to Networking",
-        quizzes: [ { title: "Reading Quiz 1" }, { title: "Chapter 2 Quiz" } ],
-        assignments: [ { title: "Lab 1" }, { title: "Research Summary" } ]
-      },
-      {
-        name: "Cybersecurity Fundamentals",
-        quizzes: [ { title: "Security Basics Quiz" } ],
-        assignments: [ { title: "Case Study" } ]
-      }
-    ];
-
-    const coursesDiv = document.getElementById("courses");
-    const forecastContainer = document.getElementById("forecastContainer");
-    const forecastSectionsDiv = document.getElementById("forecastSections");
-    const nextBtn = document.getElementById("nextBtn");
-    const forecastTitle = document.getElementById("forecastTitle");
-
-    let forecastSections = [];
-    let currentIndex = 0;
-
-    function renderCourses() {
-      mockCourses.forEach(course => {
+    Object.keys(courseGroups).forEach(courseName => {
         const div = document.createElement("div");
         div.className = "course";
-        div.innerHTML = `
-          <h2>${course.name}</h2>
-          <div class="section-title">Quizzes</div>
-        `;
+        div.innerHTML = `<h2>${courseName}</h2>`;
+        
+        courseGroups[courseName].forEach(item => {
+            const row = document.createElement("div");
+            row.className = "item-row";
+            row.innerHTML = `<span>${item.title}</span>`;
+            
+            const btn = document.createElement("button");
+            btn.textContent = "Forecast";
+            btn.onclick = async () => {
+                // Check type and number/id
+                const type = item.type; 
+                const number = item.id || 0;
+                const sections = await getForecast(type, number);
 
-        course.quizzes.forEach(q => {
-          const row = document.createElement("div");
-          row.className = "item-row";
-          row.innerHTML = `<span>${q.title}</span>`;
-          const btn = document.createElement("button");
-          btn.textContent = "Forecast";
-          btn.onclick = () => requestForecast(q.title);
-          row.appendChild(btn);
-          div.appendChild(row);
-        });
-
-        div.innerHTML += `<div class="section-title">Assignments</div>`;
-
-        course.assignments.forEach(a => {
-          const row = document.createElement("div");
-          row.className = "item-row";
-          row.innerHTML = `<span>${a.title}</span>`;
-          const btn = document.createElement("button");
-          btn.textContent = "Forecast";
-          btn.onclick = () => requestForecast(a.title);
-          row.appendChild(btn);
-          div.appendChild(row);
+                // Display forecast underneath
+                let forecastContainer = row.querySelector(".forecast-sections");
+                if (!forecastContainer) {
+                    forecastContainer = document.createElement("div");
+                    forecastContainer.className = "forecast-sections";
+                    row.appendChild(forecastContainer);
+                }
+                forecastContainer.innerHTML = ""; // clear previous
+                
+                sections.forEach(sec => {
+                    const secDiv = document.createElement("div");
+                    secDiv.className = "forecast-section";
+                    const ta = document.createElement("textarea");
+                    ta.value = sec;
+                    ta.oninput = e => sec = e.target.value;
+                    secDiv.appendChild(ta);
+                    forecastContainer.appendChild(secDiv);
+                });
+            };
+            
+            row.appendChild(btn);
+            div.appendChild(row);
         });
 
         coursesDiv.appendChild(div);
-      });
-    }
+    });
+}
 
-    function requestForecast(title) {
-      forecastTitle.textContent = "Forecast for: " + title;
-      forecastContainer.style.display = "block";
-      forecastSectionsDiv.innerHTML = "";
-      currentIndex = 0;
-
-      // Mock server response
-      forecastSections = [
-        "Section 1: Overview of predicted content...",
-        "Section 2: Key terms likely to appear...",
-        "Section 3: Concepts students usually struggle with...",
-        "Section 4: Practice-style question suggestions..."
-      ];
-
-      revealNext();
-    }
-
-    function revealNext() {
-      if (currentIndex >= forecastSections.length) {
-        nextBtn.style.display = "none";
-        return;
-      }
-
-      const secDiv = document.createElement("div");
-      secDiv.className = "forecast-section";
-
-      const textarea = document.createElement("textarea");
-      textarea.value = forecastSections[currentIndex];
-
-      textarea.oninput = (e) => {
-        forecastSections[currentIndex] = e.target.value;
-      };
-
-      secDiv.appendChild(textarea);
-      forecastSectionsDiv.appendChild(secDiv);
-
-      currentIndex++;
-    }
-
-    nextBtn.onclick = revealNext;
-
-    renderCourses();
-  </script>
+// Run on page load
+renderAll();
+</script>
 </body>
 </html>

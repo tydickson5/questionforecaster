@@ -1,5 +1,6 @@
 from canvasreader import CanvasReader 
 from embedding import QuizParser
+from embedding import AssignmentParser
 
 import json
 
@@ -23,7 +24,8 @@ if __name__ == "__main__":
     
     # Get the assignment
     assignment_data = reader.get_assignment(790778)
-    embedder = QuizParser(assignment_data)
+    print(json.dumps(assignment_data, indent=2))
+    embedder = AssignmentParser(assignment_data)
     data = embedder.parse()
     print(json.dumps(data, indent=2))
     
