@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "chunk_id": 1,
+      "section_title": "Wireless Networks",
+      "risky": true,
+      "difficulty": 3,
+      "faq": [
+        {
+          "question": "What exactly do \"authentication protocols\" mean in the context of wireless networks, and why are they a requirement?",
+          "answer": "Authentication protocols are sets of rules and procedures that verify the identity of a device or user trying to connect to a wireless network. They are essential because wireless signals can be easily intercepted; without authentication, anyone could potentially access the network, leading to unauthorized data access, network misuse, or privacy breaches. They ensure only legitimate users and devices can connect."
+        },
+        {
+          "question": "Do authentication protocols also handle data encryption, or is that a separate function?",
+          "answer": "While often used together, authentication protocols and data encryption are distinct functions. Authentication verifies *who* is allowed to connect to the network. Encryption, on the other hand, scrambles the data being transmitted so that it remains unreadable to unauthorized parties even if intercepted. Many modern wireless security standards integrate both authentication and encryption, but they are separate processes designed for different security goals."
+        },
+        {
+          "question": "Can you provide examples of common authentication protocols used in wireless networks?",
+          "answer": "Certainly. Some common authentication protocols and mechanisms include:\n*   **WPA2/WPA3-PSK (Pre-Shared Key):** Used in most home networks, where a single password (the pre-shared key) is used for all devices to authenticate.\n*   **WPA2/WPA3-Enterprise (802.1X):** Often found in corporate or educational environments, this uses a centralized authentication server (like RADIUS) to verify individual user credentials.\n*   **Open System Authentication:** While technically an authentication method, it provides no real security as it allows any device to connect without a password, relying purely on the network's SSID. It's rarely used for secure networks."
+        }
+      ]
+    }
+  ]
+}
