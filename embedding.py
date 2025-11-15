@@ -155,161 +155,174 @@ class QuizParser:
 
 class AssignmentParser:
     """
-    Parses assignment into structured sections.
-
-    Output shape:
+    Parses a Canvas assignment like the incident scenarios into:
 
     {
       "assignment_id": ...,
-      "title": "...",
-      "sections": [
+      "title": ...,
+      "meta": {
+        "raw_header": "...",
+        "points": 100.0,
+        "submission_types": ["online_upload"]
+      },
+      "scenarios": [
         {
           "name": "Cloud Storage",
           "scenario": "...",
-          "prompts": {
-            "containment": [...],
-            "post_incident": [...],
-            "elevator_pitch": [...]
-          }
+          "containment": "...",
+          "post_incident_activities": "...",
+          "elevator_pitch": "..."
         },
         ...
       ]
     }
     """
 
-    SECTION_RE = re.compile(
-        r"^(Cloud Storage|PII Accident|Social Media|Zero-Day)\s*$",
-        re.MULTILINE,
-    )
+    # e.g. "Cloud StorageScenario:", "PII AccidentScenario:", etc.
+    SCENARIO_SPLIT_RE = re.compile(r"([A-Za-z0-9 \-]+)Scenario:")
 
     def __init__(self, assignment_data: Dict[str, Any]):
         self.data = assignment_data
+
+    # ---------- PUBLIC INTERFACE ----------
 
     def parse(self) -> Dict[str, Any]:
         assignment_id = self.data["id"]
         title = self.data.get("title", "").strip()
         content = self.data.get("content", "")
 
-        sections = self._split_into_sections(content)
-        parsed_sections: List[Dict[str, Any]] = []
-
-        for name, block in sections:
-            parsed_sections.append(self._parse_section(name, block))
+        header, body = self._split_header_and_body(content)
+        meta = self._parse_header(header)
+        scenarios = self._parse_scenarios(body)
 
         return {
             "assignment_id": assignment_id,
             "title": title,
-            "sections": parsed_sections,
+            "meta": meta,
+            "scenarios": scenarios,
         }
 
-    def _split_into_sections(self, content: str) -> List[tuple[str, str]]:
+    def save(self, path: str) -> None:
+        structured = self.parse()
+        with open(path, "w") as f:
+            json.dump(structured, f, indent=2)
+        print(f"[AssignmentParser] Saved structured assignment JSON to: {path}")
+
+    # ---------- INTERNAL HELPERS ----------
+
+    def _split_header_and_body(self, content: str) -> tuple[str, str]:
         """
-        Split the assignment into blocks per scenario heading.
-
-        Returns list of (section_name, block_text).
+        Everything before 'Description:' is header; everything after is body.
         """
-        sections: List[tuple[str, str]] = []
-        last_name: Optional[str] = None
-        last_start: Optional[int] = None
+        marker = "Description:"
+        if marker in content:
+            before, after = content.split(marker, 1)
+            return before.strip(), after.lstrip("\n")
+        return "", content
 
-        for match in self.SECTION_RE.finditer(content):
-            name = match.group(1)
-            if last_name is not None and last_start is not None:
-                block = content[last_start:match.start()].strip()
-                sections.append((last_name, block))
-            last_name = name
-            last_start = match.end()
+    def _parse_header(self, header: str) -> Dict[str, Any]:
+        points: Optional[float] = None
+        submission_types: List[str] = []
 
-        # tail
-        if last_name is not None and last_start is not None:
-            block = content[last_start:].strip()
-            sections.append((last_name, block))
+        for line in header.splitlines():
+            line = line.strip()
+            if line.startswith("Points:"):
+                try:
+                    payload = line.split("Points:", 1)[1].strip()
+                    points = float(payload.split()[0])
+                except Exception:
+                    points = None
+            elif line.startswith("Submission Types:"):
+                payload = line.split("Submission Types:", 1)[1].strip()
+                if payload:
+                    submission_types = [t.strip() for t in payload.split(",") if t.strip()]
 
-        return sections
+        return {
+            "raw_header": header,
+            "points": points,
+            "submission_types": submission_types,
+        }
 
-    def _parse_section(self, name: str, block: str) -> Dict[str, Any]:
+    def _parse_scenarios(self, body: str) -> List[Dict[str, Any]]:
         """
-        For each section block, extract:
-          - scenario text
-          - containment prompts
-          - post-incident prompts
-          - elevator pitch prompts
-        Tailored to the specific wording of this assignment.
+        Split the body into scenarios using the 'XScenario:' pattern.
         """
-        scenario_label = "Scenario:"
-        items_label = "Items to discuss with your group:"
+        parts = self.SCENARIO_SPLIT_RE.split(body)
 
-        scenario_text = ""
-        discussion_block = ""
+        # parts = ["<intro?>", "Cloud Storage", "<block1>", "PII Accident", "<block2>", ...]
+        if len(parts) <= 1:
+            return []
 
-        if scenario_label in block:
-            s_idx = block.index(scenario_label) + len(scenario_label)
-            # try to find the items label after the scenario
-            items_idx = block.find(items_label, s_idx)
-            if items_idx != -1:
-                scenario_text = block[s_idx:items_idx].strip()
-                discussion_block = block[items_idx + len(items_label):].strip()
-            else:
-                scenario_text = block[s_idx:].strip()
-                discussion_block = ""
-        else:
-            # fallback: whole block is "scenario"
-            scenario_text = block.strip()
-            discussion_block = ""
+        scenarios: List[Dict[str, Any]] = []
 
-        containment_text = ""
-        post_text = ""
+        for i in range(1, len(parts), 2):
+            name = parts[i].strip()
+            block = parts[i + 1]
+            scenarios.append(self._parse_scenario_block(name, block))
+
+        return scenarios
+
+    def _parse_scenario_block(self, name: str, block: str) -> Dict[str, Any]:
+        text = block.strip()
+
+        # 1. Scenario text vs discussion+elevator
+        discussion_marker = "Items to discuss with your group:"
+        scenario_text = text
+        discussion_and_elevator = ""
+
+        if discussion_marker in text:
+            before, after = text.split(discussion_marker, 1)
+            scenario_text = before.strip()
+            discussion_and_elevator = after.strip()
+
+        # 2. Discussion vs elevator pitch
+        elevator_marker = "Be prepared to discuss in class (Elevator Pitch style):"
+        discussion_text = discussion_and_elevator
         elevator_text = ""
 
-        if discussion_block:
-            cont_label = "Containment"
-            post_label = "Post-Incident Activities"
-            elevator_label = "Be prepared to discuss in class"
+        if elevator_marker in discussion_and_elevator:
+            before, after = discussion_and_elevator.split(elevator_marker, 1)
+            discussion_text = before.strip()
+            elevator_text = after.strip()
 
-            cont_idx = discussion_block.find(cont_label)
-            post_idx = discussion_block.find(post_label)
-            elev_idx = discussion_block.find(elevator_label)
+        # 3. Containment vs Post-Incident Activities (just simple splits)
+        # We assume both headings exist and in that order.
+        containment_text = ""
+        post_incident_text = ""
 
-            # Assume they appear in this order: Containment -> Post-Incident -> Elevator Pitch
-            if cont_idx != -1 and post_idx != -1 and elev_idx != -1:
-                containment_text = discussion_block[cont_idx + len(cont_label):post_idx].strip()
-                post_text = discussion_block[post_idx + len(post_label):elev_idx].strip()
-                elevator_text = discussion_block[elev_idx + len(elevator_label):].strip()
-            else:
-                # Very crude fallback: everything is containment
-                containment_text = discussion_block.strip()
+        cont_marker = "Containment"
+        post_marker = "Post-Incident Activities"
 
-        def _lines_to_list(text: str) -> List[str]:
-            return [line.strip() for line in text.splitlines() if line.strip()]
-
-        prompts = {
-            "containment": _lines_to_list(containment_text),
-            "post_incident": _lines_to_list(post_text),
-            "elevator_pitch": _lines_to_list(elevator_text),
-        }
+        if cont_marker in discussion_text and post_marker in discussion_text:
+            _, after_cont = discussion_text.split(cont_marker, 1)
+            cont_part, after_post = after_cont.split(post_marker, 1)
+            containment_text = cont_part.strip()
+            post_incident_text = after_post.strip()
+        else:
+            # fallback: put all in containment if markers missing/broken
+            containment_text = discussion_text
 
         return {
             "name": name,
-            "scenario": scenario_text,
-            "prompts": prompts,
+            "scenario": " ".join(scenario_text.split()),
+            "containment": containment_text.strip(),
+            "post_incident_activities": post_incident_text.strip(),
+            "elevator_pitch": elevator_text.strip(),
         }
-
-
-
 
 # Example
 
 if __name__ == "__main__":
     assignment_data = {
-      "type": "quiz",
-      "id": 155647,
-      "title": "Reading Quiz 1",
-      "content": "Quiz: Reading Quiz 1\n\nPoints: 5.0\nDue: 2024-09-04T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nOne type of Basic network security defense tool is a:\nPoints: 1.0\n\nAnswer Choices:\n  • Firewall [CORRECT]\n  • Black hat\n  • NotPetya\n  • Canadian\n\nQuestion 2:\nWhich of the following is a main type of network discussed in the text?\nPoints: 1.0\n\nAnswer Choices:\n  • Wide Area Networks (WAN) [CORRECT]\n  • Social Networks\n  • Peering Networks\n  • Aruba Networks\n\n"
+        "type": "assignment",
+        "id": 790778,
+        "title": "2024 Incident Scenerios",
+        "content": "Assignment: 2024 Incident Scenerios\n\nPoints: 100.0\nSubmission Types: online_upload\n\nDescription:\nCloud StorageScenario:One of your organization\u2019s internal departments frequently uses outside cloud storage to store large amounts of data, some of which may be sensitive. You have recently learned that the cloud storage provider being used has been publicly compromised and large amounts of data have been exposed. All user passwords and data in the cloud provider\u2019s infrastructure may have been compromised.How do you respond?\nItems to discuss with your group:\nContainment\n\nWhat strategy should the organization take to contain the incident? Why is this strategy preferable to others?\n\nWhat could happen if the incident were not contained?\n\nWhat additional tools and organizations might be needed to respond to this particular incident?\n\nPost-Incident Activities\n\nWhat could be done to prevent similar incidents from occurring in the future?\n\nWhat could be done to improve detection of similar incidents?\n\nWhat could be done to improve containment of similar incidents?\n\nBe prepared to discuss in class (Elevator Pitch style):\n\nYour strategy to contain the attack.\n\nWhat additional tools and resources you would need.\n\nWhat your group learned.\n\nPII AccidentScenario:You receive news that one of your employees has accidentally disclosed sensitive personally identifiable information (PII) for over 200 clients and personnel. This occurred when they emailed a document that had not been properly scrubbed to a contractor. The employee had been recently trained on PII handling.How do you respond?\nItems to discuss with your group:\nContainment\n\nWhat strategy should the organization take to contain the incident?\n\nWhy is this strategy preferable to others?\n\nWhat could happen if the incident were not contained?\n\nWhat additional tools and organizations might be needed?\n\nPost-Incident Activities\n\nHow to prevent similar incidents in the future?\n\nHow to improve detection of similar incidents?\n\nHow to improve containment for similar incidents?\n\nBe prepared to discuss in class (Elevator Pitch style):\n\nYour strategy to contain the attack.\n\nTools/resources needed.\n\nWhat your group learned.\n\nSocial MediaScenario:Your organization\u2019s social media website is compromised. A terrorist group calling themselves \u201cRebellion Cyber Forces\u201d has claimed responsibility for attacks against government organizations. They have gained control of your organization\u2019s official social media account and are sending public notifications claiming your organization has been compromised.How do you respond?\nItems to discuss with your group:\nContainment\n\nStrategy to contain the incident and why.\n\nWhat happens if the incident isn't contained?\n\nAdditional tools/organizations needed?\n\nPost-Incident Activities\n\nHow to prevent similar incidents?\n\nHow to improve detection?\n\nHow to improve containment?\n\nBe prepared to discuss in class (Elevator Pitch style):\n\nYour strategy to contain the attack.\n\nTools/resources needed.\n\nWhat your group learned.\n\nZero-DayScenario:The browser deployed on all organizational workstations has a significant zero-day vulnerability being actively exploited. Ten workstations are already compromised and help desk calls are spiking. No patch or workaround exists yet; a patch is expected in one week.How do you respond?\nItems to discuss with your group:\nContainment\n\nRecommended containment strategy and why.\n\nRisks if not contained.\n\nAdditional tools/organizations needed?\n\nPost-Incident Activities\n\nPrevention of similar incidents.\n\nImproved detection.\n\nImproved containment.\n\nBe prepared to discuss in class (Elevator Pitch style):\n\nContainment strategy.\n\nTools/resources required.\n\nWhat your group learned.\n"
     }
 
-    parser = QuizParser(assignment_data)
+    parser = AssignmentParser(assignment_data)
     structured = parser.parse()
 
     print(json.dumps(structured, indent=2))
 
-    parser.save("output_quiz_155647.json")
+    parser.save("parsed_assignment.json")
