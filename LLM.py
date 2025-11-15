@@ -10,28 +10,27 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # =============================
 
 PROMPT_TEMPLATE = """
-You are analyzing educational course material.
+You are analyzing educational course material and producing an instructor-facing FAQ.
 
 Your tasks:
-1. List confusing or advanced concepts.
-2. Assign a difficulty score from 1 to 5.
-3. Predict 3 student questions at each level:
-   - beginner
-   - intermediate
-   - advanced
-4. Suggest 1–2 clarifications instructors should add.
+1. Evaluate the text and assign a difficulty score from 1 to 5.
+2. If the difficulty is 3 or higher (moderate → advanced):
+     • Identify 3–6 student questions that students are likely to ask.
+     • Questions should reflect intermediate and advanced misunderstandings ONLY.
+     • For each question, provide a clear, editable answer for the instructor.
+3. If difficulty is below 3:
+     • Do not return anything
+4. DO NOT mention difficulty in the FAQ or inside answers.
 
 Return STRICT JSON:
 
 {
-  "difficulty": number,
-  "risky_concepts": [...],
-  "predicted_questions": {
-    "beginner": [...],
-    "intermediate": [...],
-    "advanced": [...]
-  },
-  "clarification_suggestions": "..."
+  "faq": [
+    {
+      "question": "string",
+      "answer": "string"
+    }
+  ]
 }
 
 TEXT TO ANALYZE:
@@ -75,9 +74,7 @@ def analyze_chunk(chunk):
     print(f"\n=== Analyzing chunk {chunk_id}: {section_title} ===")
 
     prompt = PROMPT_TEMPLATE.replace("{TEXT}", text_to_analyze)
-
     response = model.generate_content(prompt)
-
     raw_output = response.text.strip()
 
     print("\n--- RAW GEMINI OUTPUT ---")
@@ -92,22 +89,20 @@ def analyze_chunk(chunk):
     risky = difficulty >= 3
 
     if not risky:
-        print(f"Chunk {chunk_id} marked as NOT risky (difficulty={difficulty})")
         return {
             "chunk_id": chunk_id,
             "section_title": section_title,
-            "risky": False
+            "risky": False,
+            "difficulty": difficulty,
+            "faq": []
         }
-
-    print(f"Chunk {chunk_id} marked as RISKY (difficulty={difficulty})")
 
     return {
         "chunk_id": chunk_id,
         "section_title": section_title,
         "risky": True,
-        "risky_concepts": parsed["risky_concepts"],
-        "predicted_questions": parsed["predicted_questions"],
-        "clarification_suggestions": parsed["clarification_suggestions"]
+        "difficulty": difficulty,
+        "faq": parsed.get("faq", [])
     }
 
 
