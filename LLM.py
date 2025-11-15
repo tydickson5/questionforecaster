@@ -46,10 +46,23 @@ TEXT TO ANALYZE:
 def analyze_all_chunks(chunks):
     results = [analyze_chunk(chunk) for chunk in chunks]
 
-    print("\n===== FINAL OUTPUT TO FRONTEND =====")
-    print(json.dumps({"results": results}, indent=2))
+    final_output = {"results": results}
 
-    return {"results": results}
+    # ------------------------------
+    # PRINT TO TERMINAL (PRETTY)
+    # ------------------------------
+    print("\n===== FINAL OUTPUT (PRINTED TO TERMINAL) =====\n")
+    print(json.dumps(final_output, indent=2))
+
+    # ------------------------------
+    # SAVE TO JSON FILE
+    # ------------------------------
+    with open("analysis_output.json", "w") as f:
+        json.dump(final_output, f, indent=2)
+
+    print("\nSaved analysis to: analysis_output.json\n")
+
+    return final_output
 
 
 # =============================
@@ -103,11 +116,6 @@ def analyze_chunk(chunk):
 # =============================
 
 def normalize_chunk(chunk):
-    """
-    Supports:
-    - Eva’s lecture chunks
-    - Quiz question blocks
-    """
 
     if "chunk_id" in chunk and "text" in chunk:
         return (
@@ -130,10 +138,6 @@ def normalize_chunk(chunk):
 
 
 def safe_parse_json(raw):
-    """
-    Gemini sometimes returns text before/after JSON.
-    This extracts only the JSON section.
-    """
     try:
         return json.loads(raw)
     except:
