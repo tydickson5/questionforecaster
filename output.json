@@ -1,0 +1,108 @@
+{
+  "quiz_id": 155647,
+  "title": "Reading Quiz 1",
+  "meta": {
+    "raw_header": "Quiz: Reading Quiz 1\n\nPoints: 5.0\nDue: 2024-09-04T18:00:00Z"
+  },
+  "questions": [
+    {
+      "index": 1,
+      "question": "One type of Basic network security defense tool is a:",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "Firewall",
+          "is_correct": true
+        },
+        {
+          "text": "Black hat",
+          "is_correct": false
+        },
+        {
+          "text": "NotPetya",
+          "is_correct": false
+        },
+        {
+          "text": "Canadian",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "question": "Which of the following is a main type of network discussed in the text?",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "Wide Area Networks (WAN)",
+          "is_correct": true
+        },
+        {
+          "text": "Social Networks",
+          "is_correct": false
+        },
+        {
+          "text": "Peering Networks",
+          "is_correct": false
+        },
+        {
+          "text": "Aruba Networks",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "question": "What common protocol used to transmit most network traffic on earth\u00a0was a section of the assigned chapter?",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "TCP/IP",
+          "is_correct": true
+        },
+        {
+          "text": "Appletalk",
+          "is_correct": false
+        },
+        {
+          "text": "Valve",
+          "is_correct": false
+        },
+        {
+          "text": "DMARK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "question": "The assigned chapter included a section on wireless networks,\u00a0used to transmit data using radio waves.",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "True",
+          "is_correct": true
+        },
+        {
+          "text": "False",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "question": "The OSI in OSI model\u00a0stands for Optional Sidecar Insertion.",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "True",
+          "is_correct": false
+        },
+        {
+          "text": "False",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
