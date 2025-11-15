@@ -10,7 +10,7 @@ API_TOKEN = '22119~LxPGrtw6eU9F8yKyX8QkrM8GUYKChGk4n4w8rAthr2ke6VJCwnV6uL93NhLNN
 COURSE_ID = 175906  # Replace with your course ID
 
 app = Flask(__name__)
-CORS(app)   # Allows requests from your HTML/JS frontend
+CORS(app)
 
 @app.route("/forecast", methods=["POST"])
 def forecast():
@@ -32,17 +32,43 @@ def forecast():
     # Example: sections generated for the frontend
     if(item_title == "All"):
         #return all items
-        allClasses = reader.get_all_quizzes()
         
-        return jsonify({"sections": allClasses})
+        
+        quiz_data = reader.get_quiz(155647)           # list of quizzes
+        assignment_data = reader.get_assignment(790778) # list of assignments
+
+        # Option 1: flat list with type tags
+        all_classes = []
+
+
+        all_classes.append(quiz_data)
+
+
+        all_classes.append(assignment_data)
+
+        # Return combined JSON
+        return jsonify({"sections": all_classes})
 
         #print(json.dumps(allClasses, indent=2))
 
     else:
         #return item by id
-        assignment_data = reader.get_quiz(assignment_id)
-        embedder = QuizParser(assignment_data)
-        data = embedder.parse()
+        if(item_title == "quiz"):
+            assignment_data = reader.get_quiz(assignment_id)
+            parser = QuizParser(assignment_data)
+            data = parser.parse()
+            return jsonify({"sections": data})
+        else:
+            assignment_data = reader.get_assignment(assignment_id)
+            parser = QuizParser(assignment_data)
+            data = parser.parse()
+            return jsonify({"sections": data})
+
+        #nelsons thing
+
+
+
+        
 
 
     

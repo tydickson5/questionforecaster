@@ -153,7 +153,7 @@ class QuizParser:
 
         return question_text, points_val, choices
 
-class IncidentAssignmentParser:
+class AssignmentParser:
     """
     Parses assignment into structured sections.
 
