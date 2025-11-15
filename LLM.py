@@ -10,22 +10,19 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # =============================
 
 PROMPT_TEMPLATE = """
-You are analyzing educational course material and producing an instructor-facing FAQ.
+You are generating an FAQ document for instructors based on course material.
 
 Your tasks:
-1. Evaluate the text and assign a difficulty score from 1 to 5.
-2. If the difficulty is 3 or higher (moderate → advanced):
-     • Identify 3–6 student questions that students are likely to ask.
-     • Questions should reflect intermediate and advanced misunderstandings ONLY.
-     • For each question, provide a clear, editable answer for the instructor.
-3. If difficulty is below 3:
-     • Return an empty FAQ list.
-4. DO NOT mention difficulty in the FAQ or inside answers.
+1. Evaluate how challenging the material is for students.
+2. If the material is NOT challenging, give 1 broad question about the material.
+3. If the material IS challenging, identify 3–6 questions students are likely to ask.
+4. These questions should reflect intermediate and advanced misunderstandings only.
+5. Provide clear, editable instructor-facing answers for each question.
+6. DO NOT output difficulty scores, risk labels, or any internal reasoning.
 
-Return STRICT JSON:
+Return STRICT JSON in the following format:
 
 {
-  "difficulty": number,
   "faq": [
     {
       "question": "string",
@@ -43,26 +40,23 @@ TEXT TO ANALYZE:
 # =============================
 
 def analyze_all_chunks(chunks):
-    results = [analyze_chunk(chunk) for chunk in chunks]
+    result_list = []
+    for chunk in chunks:
+        res = analyze_chunk(chunk)
+        if res:  # ignore low-risk chunks
+            result_list.append(res)
 
-    final_output = {"results": results}
+    final_output = {"results": result_list}
 
-    # ------------------------------
-    # PRINT TO TERMINAL (PRETTY)
-    # ------------------------------
-    print("\n===== FINAL OUTPUT (PRINTED TO TERMINAL) =====\n")
+    print("\n===== FINAL OUTPUT =====\n")
     print(json.dumps(final_output, indent=2))
 
-    # ------------------------------
-    # SAVE TO JSON FILE
-    # ------------------------------
     with open("analysis_output.json", "w") as f:
         json.dump(final_output, f, indent=2)
 
     print("\nSaved analysis to: analysis_output.json\n")
 
     return final_output
-
 
 # =============================
 # SINGLE CHUNK ANALYSIS
@@ -74,6 +68,7 @@ def analyze_chunk(chunk):
     print(f"\n=== Analyzing chunk {chunk_id}: {section_title} ===")
 
     prompt = PROMPT_TEMPLATE.replace("{TEXT}", text_to_analyze)
+
     response = model.generate_content(prompt)
     raw_output = response.text.strip()
 
@@ -85,26 +80,18 @@ def analyze_chunk(chunk):
     print("\n--- PARSED JSON ---")
     print(json.dumps(parsed, indent=2))
 
-    difficulty = parsed.get("difficulty", 3)
-    risky = difficulty >= 3
+    faq = parsed.get("faq", [])
 
-    if not risky:
-        return {
-            "chunk_id": chunk_id,
-            "section_title": section_title,
-            "risky": False,
-            "difficulty": difficulty,
-            "faq": []
-        }
+    # If no FAQ returned, skip this section entirely
+    if not faq:
+        print(f"Chunk {chunk_id} skipped (not challenging).")
+        return None
 
+    # Only return FAQ sections
     return {
-        "chunk_id": chunk_id,
         "section_title": section_title,
-        "risky": True,
-        "difficulty": difficulty,
-        "faq": parsed.get("faq", [])
+        "faq": faq
     }
-
 
 # =============================
 # HELPERS
