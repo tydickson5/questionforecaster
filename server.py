@@ -33,6 +33,7 @@ def forecast():
     if(item_title == "All"):
         #return all items
         allClasses = reader.get_all_quizzes()
+        
         return jsonify({"sections": allClasses})
 
         #print(json.dumps(allClasses, indent=2))
