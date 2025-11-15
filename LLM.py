@@ -3,7 +3,7 @@ import google.generativeai as genai
 
 # Load Gemini model
 genai.configure(api_key="AIzaSyC53fGc1AUpt8zHbXJrBI-87z2hw_OwW_U")
-model = genai.GenerativeModel("gemini-1.5-flash")  
+model = genai.GenerativeModel("gemini-2.5-flash")  
 
 # =============================
 # PROMPT
