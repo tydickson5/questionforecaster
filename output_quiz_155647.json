@@ -1,0 +1,55 @@
+{
+  "quiz_id": 155647,
+  "title": "Reading Quiz 1",
+  "meta": {
+    "raw_header": "Quiz: Reading Quiz 1\n\nPoints: 5.0\nDue: 2024-09-04T18:00:00Z"
+  },
+  "questions": [
+    {
+      "index": 1,
+      "question": "One type of Basic network security defense tool is a:",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "Firewall",
+          "is_correct": true
+        },
+        {
+          "text": "Black hat",
+          "is_correct": false
+        },
+        {
+          "text": "NotPetya",
+          "is_correct": false
+        },
+        {
+          "text": "Canadian",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "question": "Which of the following is a main type of network discussed in the text?",
+      "points": 1.0,
+      "choices": [
+        {
+          "text": "Wide Area Networks (WAN)",
+          "is_correct": true
+        },
+        {
+          "text": "Social Networks",
+          "is_correct": false
+        },
+        {
+          "text": "Peering Networks",
+          "is_correct": false
+        },
+        {
+          "text": "Aruba Networks",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
