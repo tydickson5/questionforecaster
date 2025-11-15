@@ -44,9 +44,12 @@ TEXT TO ANALYZE:
 # =============================
 
 def analyze_all_chunks(chunks):
-    return {
-        "results": [analyze_chunk(chunk) for chunk in chunks]
-    }
+    results = [analyze_chunk(chunk) for chunk in chunks]
+
+    print("\n===== FINAL OUTPUT TO FRONTEND =====")
+    print(json.dumps({"results": results}, indent=2))
+
+    return {"results": results}
 
 
 # =============================
@@ -56,23 +59,34 @@ def analyze_all_chunks(chunks):
 def analyze_chunk(chunk):
     text_to_analyze, section_title, chunk_id = normalize_chunk(chunk)
 
+    print(f"\n=== Analyzing chunk {chunk_id}: {section_title} ===")
+
     prompt = PROMPT_TEMPLATE.replace("{TEXT}", text_to_analyze)
 
     response = model.generate_content(prompt)
 
     raw_output = response.text.strip()
 
+    print("\n--- RAW GEMINI OUTPUT ---")
+    print(raw_output)
+
     parsed = safe_parse_json(raw_output)
+
+    print("\n--- PARSED JSON ---")
+    print(json.dumps(parsed, indent=2))
 
     difficulty = parsed.get("difficulty", 3)
     risky = difficulty >= 3
 
     if not risky:
+        print(f"Chunk {chunk_id} marked as NOT risky (difficulty={difficulty})")
         return {
             "chunk_id": chunk_id,
             "section_title": section_title,
             "risky": False
         }
+
+    print(f"Chunk {chunk_id} marked as RISKY (difficulty={difficulty})")
 
     return {
         "chunk_id": chunk_id,
@@ -95,7 +109,6 @@ def normalize_chunk(chunk):
     - Quiz question blocks
     """
 
-    # Case 1: lecture chunk
     if "chunk_id" in chunk and "text" in chunk:
         return (
             chunk["text"],
@@ -103,7 +116,6 @@ def normalize_chunk(chunk):
             chunk["chunk_id"]
         )
 
-    # Case 2: Quiz question block
     if "index" in chunk and "question" in chunk:
         section_title = f"Quiz Question {chunk['index']}"
         base_text = f"Question: {chunk['question']}"
@@ -114,7 +126,6 @@ def normalize_chunk(chunk):
 
         return base_text, section_title, chunk["index"]
 
-    # Fallback (should not happen)
     return str(chunk), "Unknown", -1
 
 
