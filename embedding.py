@@ -153,4 +153,163 @@ class QuizParser:
 
         return question_text, points_val, choices
 
+class IncidentAssignmentParser:
+    """
+    Parses assignment into structured sections.
 
+    Output shape:
+
+    {
+      "assignment_id": ...,
+      "title": "...",
+      "sections": [
+        {
+          "name": "Cloud Storage",
+          "scenario": "...",
+          "prompts": {
+            "containment": [...],
+            "post_incident": [...],
+            "elevator_pitch": [...]
+          }
+        },
+        ...
+      ]
+    }
+    """
+
+    SECTION_RE = re.compile(
+        r"^(Cloud Storage|PII Accident|Social Media|Zero-Day)\s*$",
+        re.MULTILINE,
+    )
+
+    def __init__(self, assignment_data: Dict[str, Any]):
+        self.data = assignment_data
+
+    def parse(self) -> Dict[str, Any]:
+        assignment_id = self.data["id"]
+        title = self.data.get("title", "").strip()
+        content = self.data.get("content", "")
+
+        sections = self._split_into_sections(content)
+        parsed_sections: List[Dict[str, Any]] = []
+
+        for name, block in sections:
+            parsed_sections.append(self._parse_section(name, block))
+
+        return {
+            "assignment_id": assignment_id,
+            "title": title,
+            "sections": parsed_sections,
+        }
+
+    def _split_into_sections(self, content: str) -> List[tuple[str, str]]:
+        """
+        Split the assignment into blocks per scenario heading.
+
+        Returns list of (section_name, block_text).
+        """
+        sections: List[tuple[str, str]] = []
+        last_name: Optional[str] = None
+        last_start: Optional[int] = None
+
+        for match in self.SECTION_RE.finditer(content):
+            name = match.group(1)
+            if last_name is not None and last_start is not None:
+                block = content[last_start:match.start()].strip()
+                sections.append((last_name, block))
+            last_name = name
+            last_start = match.end()
+
+        # tail
+        if last_name is not None and last_start is not None:
+            block = content[last_start:].strip()
+            sections.append((last_name, block))
+
+        return sections
+
+    def _parse_section(self, name: str, block: str) -> Dict[str, Any]:
+        """
+        For each section block, extract:
+          - scenario text
+          - containment prompts
+          - post-incident prompts
+          - elevator pitch prompts
+        Tailored to the specific wording of this assignment.
+        """
+        scenario_label = "Scenario:"
+        items_label = "Items to discuss with your group:"
+
+        scenario_text = ""
+        discussion_block = ""
+
+        if scenario_label in block:
+            s_idx = block.index(scenario_label) + len(scenario_label)
+            # try to find the items label after the scenario
+            items_idx = block.find(items_label, s_idx)
+            if items_idx != -1:
+                scenario_text = block[s_idx:items_idx].strip()
+                discussion_block = block[items_idx + len(items_label):].strip()
+            else:
+                scenario_text = block[s_idx:].strip()
+                discussion_block = ""
+        else:
+            # fallback: whole block is "scenario"
+            scenario_text = block.strip()
+            discussion_block = ""
+
+        containment_text = ""
+        post_text = ""
+        elevator_text = ""
+
+        if discussion_block:
+            cont_label = "Containment"
+            post_label = "Post-Incident Activities"
+            elevator_label = "Be prepared to discuss in class"
+
+            cont_idx = discussion_block.find(cont_label)
+            post_idx = discussion_block.find(post_label)
+            elev_idx = discussion_block.find(elevator_label)
+
+            # Assume they appear in this order: Containment -> Post-Incident -> Elevator Pitch
+            if cont_idx != -1 and post_idx != -1 and elev_idx != -1:
+                containment_text = discussion_block[cont_idx + len(cont_label):post_idx].strip()
+                post_text = discussion_block[post_idx + len(post_label):elev_idx].strip()
+                elevator_text = discussion_block[elev_idx + len(elevator_label):].strip()
+            else:
+                # Very crude fallback: everything is containment
+                containment_text = discussion_block.strip()
+
+        def _lines_to_list(text: str) -> List[str]:
+            return [line.strip() for line in text.splitlines() if line.strip()]
+
+        prompts = {
+            "containment": _lines_to_list(containment_text),
+            "post_incident": _lines_to_list(post_text),
+            "elevator_pitch": _lines_to_list(elevator_text),
+        }
+
+        return {
+            "name": name,
+            "scenario": scenario_text,
+            "prompts": prompts,
+        }
+
+
+
+
+# Example
+
+if __name__ == "__main__":
+    assignment_data = {
+      "type": "quiz",
+      "id": 155647,
+      "title": "Reading Quiz 1",
+      "content": "Quiz: Reading Quiz 1\n\nPoints: 5.0\nDue: 2024-09-04T18:00:00Z\n\nQuestions:\n\nQuestion 1:\nOne type of Basic network security defense tool is a:\nPoints: 1.0\n\nAnswer Choices:\n  • Firewall [CORRECT]\n  • Black hat\n  • NotPetya\n  • Canadian\n\nQuestion 2:\nWhich of the following is a main type of network discussed in the text?\nPoints: 1.0\n\nAnswer Choices:\n  • Wide Area Networks (WAN) [CORRECT]\n  • Social Networks\n  • Peering Networks\n  • Aruba Networks\n\n"
+    }
+
+    parser = QuizParser(assignment_data)
+    structured = parser.parse()
+
+    print(json.dumps(structured, indent=2))
+
+    parser.save("output_quiz_155647.json")
