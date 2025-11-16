@@ -10,8 +10,8 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # =============================
 
 PROMPT_TEMPLATE = """
-You are generating an FAQ sheet for students based on the assignment or quiz content provided below. 
-You should output a minimum of 5 FAQ questions and a maximum of 10 FAQ questions TOTAL for the whole assignment.
+You are generating ONE FAQ sheet for students based on the assignment or quiz content provided below. 
+You should ONE QUESTION. 
 The goal is to anticipate the most common questions students are likely to ask about the material so that the instructor can release this FAQ and reduce confusion and repetitive student emails.
 
 Your tasks:
