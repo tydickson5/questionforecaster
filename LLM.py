@@ -25,8 +25,9 @@ Your tasks:
     - Provide a clear, editable instructor-facing answer for each question.
 4. Questions should focus on common points of confusion, interpretation issues, or deeper understanding—not trivial questions.
 5. Provide clear, concise, student-friendly answers written in the instructor’s voice.
-6. DO NOT mention difficulty or risk in the output.
-7. DO NOT explain or justify your choices in the output.
+6. FAQ answers should be no longer than 2 sentences long. 
+7. DO NOT mention difficulty or risk in the output.
+8. DO NOT explain or justify your choices in the output.
 
 Return STRICT JSON in the following format:
 
