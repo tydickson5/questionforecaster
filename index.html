@@ -64,30 +64,43 @@ async function renderAll() {
             const btn = document.createElement("button");
             btn.textContent = "Forecast";
             btn.onclick = async () => {
-                // Check type and number/id
-                const type = item.type; 
-                const number = item.id || 0;
-                const sections = await getForecast(type, number);
+    const type = item.type; 
+    const number = item.id || 0;
 
-                // Display forecast underneath
-                let forecastContainer = row.querySelector(".forecast-sections");
-                if (!forecastContainer) {
-                    forecastContainer = document.createElement("div");
-                    forecastContainer.className = "forecast-sections";
-                    row.appendChild(forecastContainer);
-                }
-                forecastContainer.innerHTML = ""; // clear previous
-                
-                sections.forEach(sec => {
-                    const secDiv = document.createElement("div");
-                    secDiv.className = "forecast-section";
-                    const ta = document.createElement("textarea");
-                    ta.value = sec;
-                    ta.oninput = e => sec = e.target.value;
-                    secDiv.appendChild(ta);
-                    forecastContainer.appendChild(secDiv);
-                });
-            };
+    const response = await getForecast(type, number);
+    const results = response.results; // <-- extract the array
+
+    // Find or create container
+    let forecastContainer = row.querySelector(".forecast-sections");
+    if (!forecastContainer) {
+        forecastContainer = document.createElement("div");
+        forecastContainer.className = "forecast-sections";
+        row.appendChild(forecastContainer);
+    }
+    forecastContainer.innerHTML = ""; // clear previous
+
+    // Loop through results and their FAQs
+    results.forEach(section => {
+        const secDiv = document.createElement("div");
+        secDiv.className = "forecast-section";
+
+        const title = document.createElement("h3");
+        title.textContent = section.section_title || "Section";
+        secDiv.appendChild(title);
+
+        section.faq.forEach(f => {
+            const q = document.createElement("p");
+            q.innerHTML = `<strong>Q:</strong> ${f.question}`;
+            const a = document.createElement("p");
+            a.innerHTML = `<strong>A:</strong> ${f.answer}`;
+            secDiv.appendChild(q);
+            secDiv.appendChild(a);
+        });
+
+        forecastContainer.appendChild(secDiv);
+    });
+};
+
             
             row.appendChild(btn);
             div.appendChild(row);
