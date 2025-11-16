@@ -66,6 +66,7 @@ async function renderAll() {
             btn.onclick = async () => {
     const type = item.type; 
     const number = item.id || 0;
+    btn.style.display = "none";
 
     const response = await getForecast(type, number);
     const results = response.results; // <-- extract the array
@@ -84,9 +85,7 @@ async function renderAll() {
         const secDiv = document.createElement("div");
         secDiv.className = "forecast-section";
 
-        const title = document.createElement("h3");
-        title.textContent = section.section_title || "Section";
-        secDiv.appendChild(title);
+
 
         section.faq.forEach(f => {
             const q = document.createElement("p");

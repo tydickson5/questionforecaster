@@ -21,7 +21,8 @@ def forecast():
             a = json.load(f)
 
 
-
+        with open(other, 'r') as f:
+            other = json.load(f)
 
         
 

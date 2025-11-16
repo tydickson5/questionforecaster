@@ -4,28 +4,8 @@
       "section_title": "Unknown",
       "faq": [
         {
-          "question": "Given that the compromise occurred with the *cloud storage provider*, what is our organization's primary responsibility in the containment phase, and what actions are realistically within our control?",
-          "answer": "While the breach occurred at the provider, your organization's primary responsibility is to contain the *impact* on its own systems and data. This includes actions such as immediately revoking access tokens/credentials, isolating any internal systems that directly integrated with the compromised cloud service, assessing the scope of data exposure for your specific data, and initiating internal communications. Focus on what your organization can do to mitigate further damage and protect its assets."
-        },
-        {
-          "question": "The scenario states data has *already* been exposed. What does 'containment' specifically mean for our organization in this context, beyond what the cloud provider might do?",
-          "answer": "In this scenario, 'containment' for your organization refers to preventing *further* unauthorized access to your data or systems, limiting the spread of potential compromise within your own environment, and mitigating the ongoing fallout. This isn't about recovering data already exposed by the provider, but about shutting down any active connections, changing compromised credentials, and taking steps to ensure internal systems are not vulnerable due to the external breach."
-        },
-        {
-          "question": "How does the presence of 'sensitive data' specifically impact our incident response strategy and subsequent activities, especially concerning containment and post-incident actions?",
-          "answer": "The presence of sensitive data significantly elevates the incident's severity. It introduces critical legal, regulatory, and reputational considerations. Your strategy must account for potential data breach notification requirements (e.g., GDPR, HIPAA, state laws), the need for legal counsel involvement, increased scrutiny from regulators, and potential identity theft implications for affected individuals. This will influence communication strategies, forensic depth, and the urgency of all response phases."
-        },
-        {
-          "question": "When identifying 'additional tools and organizations' needed to respond, what categories or examples should we consider beyond basic security software or internal teams?",
-          "answer": "Think broadly about external expertise and specialized resources. This could include third-party incident response or forensic firms, legal counsel specializing in data privacy and cyber law, public relations firms to manage external communications, relevant law enforcement agencies (e.g., FBI, local police) for criminal investigations, and regulatory bodies if specific compliance is required. For tools, consider advanced threat intelligence platforms, data loss prevention (DLP) solutions, identity protection services, and specialized forensic analysis tools."
-        },
-        {
-          "question": "For the 'Post-Incident Activities' section, how can we clearly differentiate actions taken to 'prevent,' 'improve detection,' and 'improve containment' of similar incidents?",
-          "answer": "These three categories focus on different aspects of long-term improvement:\n*   **Prevent:** These are proactive measures to stop a similar incident from happening again at all (e.g., implementing stricter vendor vetting, moving sensitive data to on-premise storage, multi-factor authentication for all cloud access, data encryption at rest).\n*   **Improve Detection:** These enhance your ability to spot a *new* incident more quickly if it does occur (e.g., advanced logging and monitoring of cloud access, integrating cloud logs with SIEM, implementing threat intelligence feeds specific to cloud providers).\n*   **Improve Containment:** These refine your organization's ability to limit the damage *when* an incident happens (e.g., developing better incident response playbooks for cloud breaches, practicing rapid credential rotation, implementing micro-segmentation for critical data)."
-        },
-        {
-          "question": "What should we include in the 'What your group learned' part of the elevator pitch? Should it be technical, strategic, or process-oriented?",
-          "answer": "The 'What your group learned' component should summarize the key insights or takeaways your team gained from working through the scenario. This could certainly be strategic (e.g., 'We learned the critical importance of robust third-party risk management'), process-oriented (e.g., 'The exercise highlighted gaps in our incident communication plan'), or even touch upon specific technical challenges (e.g., 'We realized the difficulty of real-time data loss assessment in a multi-tenant cloud environment'). The goal is to articulate a valuable lesson that emerged from the exercise."
+          "question": "When the cloud storage provider itself has been publicly compromised, what specific containment actions can our organization take, given we don't directly control their infrastructure?",
+          "answer": "Your organization's containment strategy should prioritize immediately revoking all internal access to the compromised service and isolating any data copied back to your systems. Concurrently, secure any remaining sensitive data by migrating it to an uncompromised internal or alternative cloud environment while informing affected users to reset any potentially reused passwords."
         }
       ]
     },
@@ -33,32 +13,8 @@
       "section_title": "Unknown",
       "faq": [
         {
-          "question": "What exactly does \"containment\" entail for an email-based PII disclosure? Is it just recalling the email?",
-          "answer": "Containment for an email-based PII disclosure goes beyond simply recalling the email. It involves limiting the spread of the data, assessing who has accessed it, and ensuring the contractor has securely deleted or returned the information. It also includes taking steps to prevent further accidental disclosures during the immediate incident response."
-        },
-        {
-          "question": "When asked about \"additional tools and organizations\" for containment, what kind of examples are you looking for?",
-          "answer": "Think broadly about resources that would aid in managing this specific incident. This could include legal counsel for compliance and notification requirements, public relations firms for reputational management, cybersecurity forensics tools to analyze the scope and impact, or even specific regulatory bodies that might need to be notified depending on the type of PII and clients affected."
-        },
-        {
-          "question": "How detailed should our justification be for the chosen containment strategy? What criteria should we use?",
-          "answer": "Your justification should clearly explain *why* your chosen strategy is superior to others in this specific scenario. Consider factors like speed of execution, cost-effectiveness, legal and regulatory compliance, minimizing reputational damage, and the likelihood of successful data recovery or prevention of further misuse. Compare your approach implicitly or explicitly to alternative, less effective options."
-        },
-        {
-          "question": "How do the \"post-incident activities\" (prevention, detection, improvement) relate to the initial containment strategy?",
-          "answer": "The post-incident activities are a crucial follow-up to the initial containment. Lessons learned during containment (e.g., what failed, what worked) should directly inform your strategies for preventing similar incidents in the future, improving your ability to detect them faster, and refining your containment protocols for even more effective responses next time. Think of it as a continuous improvement cycle."
-        },
-        {
-          "question": "The scenario mentions the employee was \"recently trained.\" How should this fact influence our response?",
-          "answer": "While the employee's recent training is a relevant detail, your primary focus should be on the organizational response to the *incident* itself and its systemic implications, rather than individual disciplinary actions. Consider how this fact might point to issues with training effectiveness, policy enforcement, or technological safeguards that training alone couldn't overcome, and how to address those systemically."
-        },
-        {
-          "question": "What's the main goal of the \"Elevator Pitch\" section, and what level of detail is expected compared to the other sections?",
-          "answer": "The Elevator Pitch is designed to be a concise, high-level summary of your group's overall approach. Imagine you have a minute or two to explain your incident response to a senior executive. It should highlight your core containment strategy, the most critical resources needed, and the key lessons learned from your analysis, without going into the deep justifications found in earlier sections. It's about clarity and impact."
-        },
-        {
-          "question": "For \"What could happen if the incident were not contained?\", are we discussing short-term or long-term consequences, or both?",
-          "answer": "You should discuss both immediate and potential long-term consequences. Immediately, uncontained PII could lead to identity theft, fraud, or direct financial harm to clients and personnel. Long-term, it could result in significant legal liabilities (fines, lawsuits), severe reputational damage, loss of client trust, and even operational disruptions if regulatory bodies impose sanctions or investigations."
+          "question": "When discussing containment, should we only focus on technical steps, or should it also include communication and legal aspects?",
+          "answer": "Your containment strategy should encompass both technical measures to stop the breach and essential non-technical steps like initial communication, legal considerations, and immediate stakeholder notification to holistically manage the incident."
         }
       ]
     },
@@ -66,32 +22,8 @@
       "section_title": "Unknown",
       "faq": [
         {
-          "question": "The scenario states the \u201csocial media website is compromised.\u201d Should we assume the compromise is limited to the social media account, or should we consider a broader organizational network compromise as part of our response?",
-          "answer": "For this assignment, focus primarily on the incident as it relates to the *compromised social media account* and its direct implications. However, a robust response would naturally consider the possibility of deeper compromise and how you would *verify* that or *mitigate* the risk, even if the primary focus remains on the social media aspect."
-        },
-        {
-          "question": "What is the distinction between \u201cStrategy to contain the incident\u201d in the Containment section and \u201cHow to improve containment\u201d in the Post-Incident Activities section?",
-          "answer": "The 'Containment' section focuses on the *immediate actions* you would take *during* the active incident to stop the attacker's activity and limit further damage (e.g., locking accounts, revoking access). 'How to improve containment' in Post-Incident Activities refers to *lessons learned* from this incident and *changes you would make to your processes, tools, or policies* to make future containment efforts more effective and efficient."
-        },
-        {
-          "question": "Since \u201cyour organization\u201d isn't specified, what type of organization should we assume it is for the purpose of this assignment?",
-          "answer": "You can choose a type of organization that makes sense for the scenario (e.g., a government agency, a large corporation, a non-profit). Be sure to state your assumption clearly in your response, as the nature of the organization might influence your specific strategies and resources."
-        },
-        {
-          "question": "When asked about \u201cAdditional tools/organizations needed,\u201d are you looking for specific software or just general types of teams?",
-          "answer": "We are looking for both! Think broadly about specific tools (e.g., forensic software, social media monitoring platforms) and external organizations (e.g., law enforcement like FBI/Secret Service, PR firms specializing in crisis communication, legal counsel, cyber insurance providers, threat intelligence sharing groups). Be specific where possible and justify their inclusion."
-        },
-        {
-          "question": "For \u201cWhat happens if the incident isn't contained?\u201d, should we focus only on technical consequences or also broader impacts?",
-          "answer": "A comprehensive answer should consider a wide range of consequences, including technical (e.g., further data breaches, system unavailability), reputational (loss of public trust, negative media), financial (cost of recovery, potential fines), and legal/regulatory implications."
-        },
-        {
-          "question": "In the Elevator Pitch, what kind of \u201clessons learned\u201d are expected, considering this is a hypothetical scenario?",
-          "answer": "Even in a hypothetical scenario, you can identify lessons learned. Focus on insights gained about your incident response plan, team coordination, communication strategies, and the effectiveness of your tools and processes. This might include realizing a need for better training, new security controls, or clearer communication protocols."
-        },
-        {
-          "question": "The attackers are sending public notifications. How does this affect our immediate containment strategy?",
-          "answer": "The public nature of the compromise is critical. Your containment strategy must immediately address public communication. This includes verifying the unauthorized posts, issuing official statements to counter false narratives, alerting your audience to disregard compromised messages, and potentially coordinating with social media platforms to remove the malicious content. Public relations and legal considerations are paramount from the outset."
+          "question": "Does our response strategy need to address public communication, or should it focus solely on the technical containment of the social media account?",
+          "answer": "Your response strategy should address both technical containment and the public communication aspect of the incident. Given the attacker is actively sending public notifications, managing public perception and misinformation is a critical part of containing the incident's overall impact."
         }
       ]
     },
@@ -99,32 +31,8 @@
       "section_title": "Unknown",
       "faq": [
         {
-          "question": "The scenario mentions \"No patch or workaround exists yet.\" How should this influence my containment strategy?",
-          "answer": "Given the absence of a patch, your containment strategy should prioritize immediate actions to stop the spread and minimize damage without relying on traditional patching. Focus on isolating compromised systems, enforcing strict network controls, and potentially implementing temporary, compensating controls to mitigate the vulnerability's exploitation."
-        },
-        {
-          "question": "What specific types of actions are expected in the \"Recommended containment strategy\"?",
-          "answer": "Think about practical, actionable steps. This might include network segmentation, blocking malicious indicators (IPs, domains), disabling vulnerable services, enforcing strict egress filtering, and isolating affected systems from the broader network. The goal is to limit the adversary's access and movement."
-        },
-        {
-          "question": "For \"Risks if not contained,\" beyond general security risks, what specific types of consequences should I discuss?",
-          "answer": "Consider the full scope of potential impact: further compromise of systems, data exfiltration, privilege escalation, lateral movement, service disruption, reputational damage, and potential regulatory or legal repercussions. Be specific about how these risks relate to a zero-day exploit."
-        },
-        {
-          "question": "What kind of \"Additional tools/organizations needed?\" should I identify?",
-          "answer": "This section should cover resources beyond your immediate internal capabilities. Examples include advanced threat intelligence feeds, specialized forensic analysis tools, external incident response firms, or collaboration with law enforcement if the incident warrants it."
-        },
-        {
-          "question": "When outlining \"Prevention of similar incidents,\" how can we prevent a *zero-day* vulnerability, which is inherently unknown beforehand?",
-          "answer": "While you cannot prevent the *existence* of a zero-day, you can build resilience. Focus on strengthening your overall security posture through robust vulnerability management for *known* issues, advanced endpoint detection and response (EDR), continuous monitoring, robust network segmentation, a strong defense-in-depth strategy, and user awareness training to reduce the attack surface."
-        },
-        {
-          "question": "What is the expected audience and level of detail for the \"Elevator Pitch\"?",
-          "answer": "The elevator pitch is for senior leadership or non-technical stakeholders. It should be concise (imagine 30-60 seconds), non-technical, and focus on the high-level containment strategy, the most critical resources needed, and the key takeaways or lessons learned without getting into granular technical details."
-        },
-        {
-          "question": "Should my containment strategy focus only on the \"Ten workstations already compromised\" or all organizational workstations?",
-          "answer": "Your strategy should address both. While isolating the compromised machines is critical, you must also consider measures to protect the *remaining* vulnerable workstations from becoming compromised. This involves understanding the attack vector and implementing protections across the entire environment."
+          "question": "Since there's no patch available for the zero-day vulnerability for a week, what kind of containment actions should we propose for the immediate response?",
+          "answer": "Your containment strategy should focus on immediate actions to limit further compromise and isolate affected systems, even without a patch. Consider network segmentation, host isolation, or temporarily restricting access to affected services or applications."
         }
       ]
     }
