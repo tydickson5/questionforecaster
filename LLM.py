@@ -10,15 +10,23 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # =============================
 
 PROMPT_TEMPLATE = """
-You are generating an FAQ document for instructors based on course material.
+You are generating an FAQ sheet for students based on the assignment or quiz content provided below. 
+You should output a minimum of 5 FAQ questions and a maximum of 10 FAQ questions TOTAL for the whole assignment.
+The goal is to anticipate the most common questions students are likely to ask about the material so that the instructor can release this FAQ and reduce confusion and repetitive student emails.
 
 Your tasks:
-1. Evaluate how challenging the material is for students.
-2. If the material is NOT challenging, give 1 broad question about the material.
-3. If the material IS challenging, identify 3–6 questions students are likely to ask.
-4. These questions should reflect intermediate and advanced misunderstandings only.
-5. Provide clear, editable instructor-facing answers for each question.
-6. DO NOT output difficulty scores, risk labels, or any internal reasoning.
+1. Evaluate how challenging the material is for students INTERNALLY.
+2. If the material is NOT challenging, give EITHER:
+    - A likely student question showing misunderstanding, OR
+    - A clarification that the professor could make to help students.
+3. If the material IS challenging:
+    - Identify 1-2 likely questions that a STUDENT would have about the content
+    - Questions should reflect misunderstandings or confusions students might have.
+    - Provide a clear, editable instructor-facing answer for each question.
+4. Questions should focus on common points of confusion, interpretation issues, or deeper understanding—not trivial questions.
+5. Provide clear, concise, student-friendly answers written in the instructor’s voice.
+6. DO NOT mention difficulty or risk in the output.
+7. DO NOT explain or justify your choices in the output.
 
 Return STRICT JSON in the following format:
 
@@ -131,4 +139,13 @@ def safe_parse_json(raw):
 # =============================
 # RUN ANALYSIS (ENTRYPOINT)
 # =============================
+if __name__ == "__main__":
+    test_chunks = [
+        {
+            "chunk_id": 1,
+            "section_title": "Wireless Networks",
+            "text": "Wireless networks transmit data using radio waves and require authentication protocols."
+        }
+    ]
 
+    analyze_all_chunks(test_chunks)
